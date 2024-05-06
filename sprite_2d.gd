@@ -18,3 +18,7 @@ func _process(delta):
 		velocity = Vector2.UP.rotated(rotation) * speed
 
 	position += velocity * delta
+
+
+func _on_button_pressed():
+	set_process(not is_processing())
