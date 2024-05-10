@@ -11,6 +11,18 @@ config_version=5
 [application]
 
 config/name="play"
-run/main_scene="res://label.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
+boot_splash/show_image=false
+boot_splash/image="res://images/splash.png"
 config/icon="res://icon.svg"
+
+[display]
+
+window/stretch/mode="viewport"
+window/bg_color=Color(0.457857, 0.0550791, 0.227589, 1)
+window/image="res://images/splash.png"
+window/show_image=true
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
