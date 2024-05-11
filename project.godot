@@ -16,6 +16,10 @@ boot_splash/show_image=false
 boot_splash/image="res://images/splash.png"
 config/icon="res://icon.svg"
 
+[autoload]
+
+Music="*res://scenes/music.tscn"
+
 [display]
 
 window/stretch/mode="viewport"
