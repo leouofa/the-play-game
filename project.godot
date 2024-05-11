@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="play"
+run/main_scene="res://scenes/game.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 boot_splash/show_image=false
 boot_splash/image="res://images/splash.png"
