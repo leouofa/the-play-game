@@ -10,12 +10,14 @@ config_version=5
 
 [application]
 
-config/name="play"
+config/name="Play"
+config/description="Splash Platformer"
 run/main_scene="res://scenes/game.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 boot_splash/show_image=false
-boot_splash/image="res://images/splash.png"
-config/icon="res://icon.svg"
+boot_splash/image="res://assets/images/splash.png"
+config/icon="res://assets/images/splash.png"
+config/macos_native_icon="res://assets/images/splash.icns"
 
 [autoload]
 
