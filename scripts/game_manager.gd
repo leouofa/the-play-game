@@ -1,9 +1,12 @@
 extends Node
 
-#var score = 0
+@onready var score_label = $Hud/ScoreLabel
+@onready var lives_label = $Hud/LivesLabel
 
-@onready var score_label = $ScoreLabel
+func _ready():
+	lives_label.text =  "Lives: " + str(Autoload.lives)
+	score_label.text = "Score: " + str(Autoload.score)
 
 func add_point():
 	Autoload.score += 1
-	score_label.text = "You collected " + str(Autoload.score) + " coins."
+	score_label.text = "Score: " + str(Autoload.score)

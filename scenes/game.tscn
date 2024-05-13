@@ -459,17 +459,28 @@ _data = {
 unique_name_in_owner = true
 script = ExtResource("1_o2yb7")
 
-[node name="ScoreLabel" type="Label" parent="GameManager"]
-offset_left = 194.0
-offset_top = 29.0
-offset_right = 318.0
-offset_bottom = 52.0
+[node name="Hud" type="CanvasLayer" parent="GameManager"]
+
+[node name="ScoreLabel" type="Label" parent="GameManager/Hud"]
+offset_left = 1009.0
+offset_top = 10.0
+offset_right = 1133.0
+offset_bottom = 33.0
 theme_override_fonts/font = ExtResource("7_sfdcy")
-theme_override_font_sizes/font_size = 8
-text = "You Collected X Coins"
+theme_override_font_sizes/font_size = 16
+text = "Score:"
 horizontal_alignment = 1
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
+
+[node name="LivesLabel" type="Label" parent="GameManager/Hud"]
+offset_left = 13.0
+offset_top = 9.0
+offset_right = 112.0
+offset_bottom = 33.0
+theme_override_fonts/font = ExtResource("7_sfdcy")
+theme_override_font_sizes/font_size = 16
+text = "Lives"
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(0, 9)
