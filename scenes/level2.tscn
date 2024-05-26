@@ -54,7 +54,7 @@ texture = ExtResource("3_ew1v8")
 10:0/0 = 0
 10:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 10:0/0/physics_layer_0/angular_velocity = 0.0
-10:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -6.0625, 8, -5.9375, 8, 0.875, -8, 1.3125)
+10:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -7, 0.125, -6.375, 8, -7, 8, 1.25, -8, 1.1875)
 11:0/0 = 0
 11:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 11:0/0/physics_layer_0/angular_velocity = 0.0
@@ -460,7 +460,6 @@ unique_name_in_owner = true
 script = ExtResource("1_020xk")
 
 [node name="Hud" type="CanvasLayer" parent="GameManager"]
-visible = false
 
 [node name="ScoreLabel" type="Label" parent="GameManager/Hud"]
 offset_left = 1009.0
