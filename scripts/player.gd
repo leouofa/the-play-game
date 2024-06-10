@@ -3,11 +3,18 @@ extends CharacterBody2D
 
 const SPEED = 130.0
 const JUMP_VELOCITY = -300.0
+const GUN_COOLDOWN_TIMEOUT = 0.4
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+var gun_equiped = true
+var gun_cooldown = true
+var bullet = preload("res://scenes/bullet.tscn")
+
 @onready var animated_sprite = $AnimatedSprite2D
+@onready var marker_2d = $Marker2D
+
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -43,3 +50,18 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+	
+	if Input.is_action_just_pressed("fire") and gun_equiped and gun_cooldown:
+		gun_cooldown = false
+		var bullet_instance = bullet.instantiate()
+		
+		if direction < 0:
+			bullet_instance.direction = Vector2.LEFT
+			
+		get_parent().add_child(bullet_instance)
+		bullet_instance.global_position = marker_2d.global_position
+		
+		await get_tree().create_timer(GUN_COOLDOWN_TIMEOUT).timeout
+		gun_cooldown = true
+		
+		

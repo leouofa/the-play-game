@@ -1,0 +1,74 @@
+[gd_scene load_steps=11 format=3 uid="uid://8op1gxitl7an"]
+
+[ext_resource type="Texture2D" uid="uid://b5e2rnnio6aii" path="res://assets/sprites/macron/bullet.png" id="1_0ldj2"]
+[ext_resource type="Script" path="res://scripts/bullet.gd" id="1_4cyp8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fr5x4"]
+atlas = ExtResource("1_0ldj2")
+region = Rect2(0, 0, 32, 2)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cos2u"]
+atlas = ExtResource("1_0ldj2")
+region = Rect2(32, 0, 32, 2)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xw6i4"]
+atlas = ExtResource("1_0ldj2")
+region = Rect2(64, 0, 32, 2)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k3caq"]
+atlas = ExtResource("1_0ldj2")
+region = Rect2(96, 0, 32, 2)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ef0vx"]
+atlas = ExtResource("1_0ldj2")
+region = Rect2(128, 0, 32, 2)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8pq74"]
+atlas = ExtResource("1_0ldj2")
+region = Rect2(0, 2, 32, 2)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8m703"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fr5x4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cos2u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xw6i4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k3caq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ef0vx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8pq74")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_upnlx"]
+size = Vector2(32, 2)
+
+[node name="bullet" type="Area2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_4cyp8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8m703")
+frame = 4
+frame_progress = 0.657499
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_upnlx")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+scale = Vector2(0.1, 0.1)
+
+[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]
