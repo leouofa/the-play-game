@@ -460,6 +460,7 @@ unique_name_in_owner = true
 script = ExtResource("1_020xk")
 
 [node name="Hud" type="CanvasLayer" parent="GameManager"]
+visible = false
 
 [node name="ScoreLabel" type="Label" parent="GameManager/Hud"]
 offset_left = 1009.0
