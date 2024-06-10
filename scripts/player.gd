@@ -54,7 +54,11 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("fire") and gun_equiped and gun_cooldown:
 		gun_cooldown = false
 		var bullet_instance = bullet.instantiate()
-		add_child(bullet_instance)
+		
+		if direction < 0:
+			bullet_instance.direction = Vector2.LEFT
+			
+		get_parent().add_child(bullet_instance)
 		bullet_instance.global_position = marker_2d.global_position
 		
 		await get_tree().create_timer(GUN_COOLDOWN_TIMEOUT).timeout
