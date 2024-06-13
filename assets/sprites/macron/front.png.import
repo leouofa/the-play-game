@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dp1tp0sovg1mx"
-path="res://.godot/imported/run2.png-d0307ab71ea5d97ccc957d95d1398c77.ctex"
+uid="uid://csf1bvbkgldv1"
+path="res://.godot/imported/front.png-a0e7c2126ccac3d7b6b2b949ef60291a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/macron/run2.png"
-dest_files=["res://.godot/imported/run2.png-d0307ab71ea5d97ccc957d95d1398c77.ctex"]
+source_file="res://assets/sprites/macron/front.png"
+dest_files=["res://.godot/imported/front.png-a0e7c2126ccac3d7b6b2b949ef60291a.ctex"]
 
 [params]
 
