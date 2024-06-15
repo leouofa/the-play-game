@@ -33,10 +33,10 @@ func handle_jump():
 
 func handle_movement():
 	var input_direction = Input.get_axis("move_left", "move_right")
-	update_bullet_direction(input_direction)
+	update_direction(input_direction)
 	velocity.x = input_direction * SPEED if input_direction != 0 else move_toward(velocity.x, 0, SPEED)
 
-func update_bullet_direction(input_direction):
+func update_direction(input_direction):
 	if input_direction > 0:
 		bullet_direction = Vector2.RIGHT
 		animated_sprite.flip_h = false
