@@ -248,7 +248,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1ah28"]
-size = Vector2(14, 31)
+size = Vector2(6, 31)
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 5
@@ -258,11 +258,12 @@ script = ExtResource("1_vcnas")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_ajoad")
-animation = &"idle"
+animation = &"run"
 autoplay = "idle"
+frame_progress = 0.919149
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -15.5)
+position = Vector2(1, -15.5)
 shape = SubResource("RectangleShape2D_1ah28")
 
 [node name="Marker2D" type="Marker2D" parent="."]
