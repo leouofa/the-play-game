@@ -1,8 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://xeay1sdxda7m"]
+[gd_scene load_steps=2 format=3 uid="uid://xeay1sdxda7m"]
 
 [ext_resource type="Script" path="res://scripts/ui/levels.gd" id="1_7kamk"]
-
-[sub_resource type="Theme" id="Theme_r80vn"]
 
 [node name="Levels" type="Control"]
 layout_mode = 3
@@ -47,7 +45,6 @@ offset_right = 45.0
 grow_vertical = 0
 scale = Vector2(2, 2)
 pivot_offset = Vector2(0.5, 29)
-theme = SubResource("Theme_r80vn")
 
 [node name="BackButton" type="Button" parent="VBoxContainer2"]
 layout_mode = 2
