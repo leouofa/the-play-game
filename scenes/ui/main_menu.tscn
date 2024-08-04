@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dn8alrnx74ty2"]
+[gd_scene load_steps=4 format=3 uid="uid://dn8alrnx74ty2"]
 
 [ext_resource type="Script" path="res://scripts/ui/main_menu.gd" id="1_xsq3j"]
 [ext_resource type="Theme" uid="uid://byr76kqnb40al" path="res://themes/main_menu.tres" id="2_gwjyq"]
+[ext_resource type="Texture2D" uid="uid://lu5wgsqdprfm" path="res://assets/images/nebulas/Green Nebula/Green_Nebula_07-1024x1024.png" id="2_sdpv5"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -12,6 +13,36 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_xsq3j")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_sdpv5")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_constants/separation = 60
+
+[node name="Control" type="Control" parent="VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("2_gwjyq")
+theme_type_variation = &"HeaderLarge"
+theme_override_font_sizes/font_size = 96
+text = "The Play"
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -19,10 +50,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -23.0
-offset_top = -33.0
-offset_right = 23.0
-offset_bottom = 33.0
+offset_left = -122.5
+offset_top = -32.0
+offset_right = 122.5
+offset_bottom = 72.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(20, 2.08165e-12)

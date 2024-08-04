@@ -3,5 +3,5 @@
 [ext_resource type="FontFile" uid="uid://convhgiltgnsw" path="res://assets/fonts/PixelOperator8.ttf" id="1_co35e"]
 
 [resource]
+default_font = ExtResource("1_co35e")
 Button/font_sizes/font_size = 24
-Button/fonts/font = ExtResource("1_co35e")
