@@ -3,7 +3,7 @@ func _ready():
 	$VBoxContainer/StartButton.grab_focus()
 	
 func _on_start_button_pressed():
-	get_tree().change_scene_to_file("res://scenes/levels/level1.tscn")
+	get_tree().change_scene_to_file("res://scenes/ui/new_game.tscn")
 
 func _on_level_button_pressed():
 	get_tree().change_scene_to_file("res://scenes/ui/levels.tscn")
