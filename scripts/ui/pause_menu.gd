@@ -2,6 +2,7 @@ extends Control
 
 func _ready():
 	$AnimationPlayer.play("RESET")
+	
 
 func resume():
 	get_tree().paused = false
@@ -10,6 +11,7 @@ func resume():
 func pause():
 	get_tree().paused = true
 	$AnimationPlayer.play("blur")
+
 
 func testEsc():
 	if Input.is_action_just_pressed("esc") and !get_tree().paused:
@@ -25,7 +27,6 @@ func _process(delta):
 
 func _on_resume_button_pressed():
 	resume()
-
 
 func _on_restart_button_pressed():
 	get_tree().reload_current_scene()
