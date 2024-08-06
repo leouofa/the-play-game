@@ -8,3 +8,7 @@ func _on_level_button_pressed():
 
 func _on_quit_button_pressed():
 	get_tree().quit()
+
+func _on_continue_button_pressed():
+	var level_path = "res://scenes/levels/level"+ str(Autoload.level) +".tscn"
+	get_tree().change_scene_to_file(level_path)
