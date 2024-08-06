@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://wyps26l1s4iw"]
+[gd_scene load_steps=17 format=3 uid="uid://wyps26l1s4iw"]
 
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_2u4mp"]
 [ext_resource type="FontFile" uid="uid://convhgiltgnsw" path="res://assets/fonts/PixelOperator8.ttf" id="2_m4o2l"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bg8dsandfue4l" path="res://scenes/platform.tscn" id="7_nsacd"]
 [ext_resource type="PackedScene" uid="uid://cxun1bjt5g7w" path="res://scenes/slime.tscn" id="8_qn5fb"]
 [ext_resource type="PackedScene" uid="uid://c6gqsq7bpg3hp" path="res://scenes/next_level.tscn" id="9_gngvk"]
+[ext_resource type="PackedScene" uid="uid://dj7igolwo2wmg" path="res://scenes/ui/pause_menu.tscn" id="10_w4jbo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tqh17"]
 texture = ExtResource("3_or350")
@@ -482,6 +483,10 @@ offset_bottom = 33.0
 theme_override_fonts/font = ExtResource("2_m4o2l")
 theme_override_font_sizes/font_size = 16
 text = "Lives"
+
+[node name="PauseLayer" type="CanvasLayer" parent="."]
+
+[node name="Pause Menu" parent="PauseLayer" instance=ExtResource("10_w4jbo")]
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(0, 9)
