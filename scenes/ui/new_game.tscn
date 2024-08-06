@@ -1,0 +1,95 @@
+[gd_scene load_steps=4 format=3 uid="uid://ct1u35m4uqycs"]
+
+[ext_resource type="Script" path="res://scripts/ui/new_game.gd" id="1_oe0il"]
+[ext_resource type="Texture2D" uid="uid://lu5wgsqdprfm" path="res://assets/images/nebulas/Green Nebula/Green_Nebula_07-1024x1024.png" id="2_su3gr"]
+[ext_resource type="Theme" uid="uid://byr76kqnb40al" path="res://themes/main_menu.tres" id="3_6gdou"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oe0il")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_su3gr")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_constants/separation = 60
+
+[node name="Control" type="Control" parent="VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("3_6gdou")
+theme_type_variation = &"HeaderLarge"
+theme_override_font_sizes/font_size = 56
+text = "Pick Save Slot"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -122.5
+offset_top = -32.0
+offset_right = 122.5
+offset_bottom = 72.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(20, 2.08165e-12)
+theme = ExtResource("3_6gdou")
+
+[node name="SlotOne" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Slot 1"
+
+[node name="SlotTwo" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Slot 2"
+
+[node name="SlotThree" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Slot 3
+"
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -52.0
+offset_right = 112.0
+offset_bottom = -20.0
+grow_vertical = 0
+theme = ExtResource("3_6gdou")
+
+[node name="BackButton" type="Button" parent="VBoxContainer3"]
+layout_mode = 2
+text = "Back
+"
+
+[connection signal="pressed" from="VBoxContainer/SlotOne" to="." method="_on_slot_one_pressed"]
+[connection signal="pressed" from="VBoxContainer/SlotTwo" to="." method="_on_slot_two_pressed"]
+[connection signal="pressed" from="VBoxContainer/SlotThree" to="." method="_on_slot_three_pressed"]
+[connection signal="pressed" from="VBoxContainer3/BackButton" to="." method="_on_back_button_pressed"]
