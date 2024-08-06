@@ -2,6 +2,7 @@ extends Control
 
 func _ready():
 	$AnimationPlayer.play("RESET")
+	$PanelContainer/VBoxContainer/ResumeButton.grab_focus()
 
 func resume():
 	get_tree().paused = false
