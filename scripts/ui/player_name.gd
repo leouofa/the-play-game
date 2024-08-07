@@ -4,6 +4,7 @@ const SAVE_PATH = "user://save_slot_"
 var warning_label
 var warning_text
 var name_input
+var game_data = {}
 
 func _ready():
 	warning_label = $VBoxContainer/WarningLabel
@@ -25,11 +26,15 @@ func slot_exists(save_slot):
 
 
 func _on_new_game_button_pressed():
-	# print(username.text)
 	save(Autoload.slot)
 
 func save(save_slot):
 	var file = FileAccess.open(SAVE_PATH + str(save_slot) + ".save", FileAccess.WRITE)
 	var username = name_input.text
-	file.store_var(username)
+	
+	game_data = { 
+		"username": username 
+	}
+
+	file.store_var(game_data)
 	file.close()

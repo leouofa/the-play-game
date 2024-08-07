@@ -5,7 +5,7 @@ const SAVE_PATH = "user://save_slot_"
 var slot1
 var slot2
 var slot3
-var username
+var game_data = {}
 
 func _ready():
 	slot1 = $VBoxContainer/SlotOne
@@ -13,16 +13,12 @@ func _ready():
 	slot3 = $VBoxContainer/SlotThree
 
 	for i in range(1, 4):  # range(start, end) where end is exclusive
-		var slot_name = "slot" + str(i)  # Create the variable name string
+		var slot_name = "slot" + str(i)
 		var slot_variable = get(slot_name)
 
 		if slot_exists(i):
 			load_data(i)
-			# var save_file = load_data(i)
-			# username = save_file.get_var(username)
-			# print(save_file.get_var(username))
-
-			slot_variable.set_text("Exists")
+			slot_variable.set_text(game_data.username)
 		else:
 			slot_variable.set_text("Empty")
 
@@ -56,8 +52,7 @@ func load_data(save_slot):
 	if slot_exists(save_slot):
 		var file_path = SAVE_PATH + str(save_slot) + ".save"
 		var savefile = FileAccess.open(file_path, FileAccess.READ)
-		print(savefile.get_var(true))
-		return savefile
+		game_data = savefile.get_var(true)
 
 
 func slot_exists(save_slot):
