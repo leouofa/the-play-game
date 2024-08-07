@@ -25,7 +25,9 @@ func _on_back_button_pressed():
 
 
 func _on_slot_one_pressed():
-	save(1)
+	Autoload.slot = 1
+	get_tree().change_scene_to_file("res://scenes/ui/player_name.tscn")
+	# save(1)
 
 
 func _on_slot_two_pressed():

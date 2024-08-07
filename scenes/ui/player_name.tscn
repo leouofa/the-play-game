@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dqjveba3n8t6u"]
 
 [ext_resource type="Script" path="res://scripts/ui/player_name.gd" id="1_k808p"]
-[ext_resource type="Texture2D" uid="uid://di3imoyprtqts" path="res://assets/images/nebulas/Blue Nebula/Blue_Nebula_01-1024x1024.png" id="2_32td5"]
+[ext_resource type="Texture2D" uid="uid://daygdp8yh18na" path="res://assets/images/nebulas/Purple Nebula/Purple_Nebula_08-1024x1024.png" id="2_upq4b"]
 [ext_resource type="Theme" uid="uid://byr76kqnb40al" path="res://themes/main_menu.tres" id="3_odgvu"]
 
 [node name="Menu" type="Control"]
@@ -20,7 +20,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_32td5")
+texture = ExtResource("2_upq4b")
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -61,19 +61,37 @@ theme = ExtResource("3_odgvu")
 theme_type_variation = &"entry"
 theme_override_constants/separation = 10
 
-[node name="LineEdit" type="LineEdit" parent="VBoxContainer"]
+[node name="WarningLabel" type="Label" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.88531, 3.73789e-06, 6.36152e-07, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "WARNING"
+horizontal_alignment = 1
+
+[node name="WarningText" type="Label" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "Overwriting the game will reset your progress."
+
+[node name="NameInput" type="LineEdit" parent="VBoxContainer"]
 custom_minimum_size = Vector2(290, 60)
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
+text = "Macron"
 placeholder_text = "Enter Name"
 alignment = 1
 max_length = 9
 
-[node name="Continue" type="Button" parent="VBoxContainer"]
+[node name="NewGameButton" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(2.08165e-12, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
-text = "Continue"
+text = "Start New Game"
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="."]
 layout_mode = 1
