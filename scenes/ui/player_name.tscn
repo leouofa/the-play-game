@@ -81,6 +81,7 @@ text = "Overwriting the game will reset your progress."
 [node name="NameInput" type="LineEdit" parent="VBoxContainer"]
 custom_minimum_size = Vector2(290, 60)
 layout_mode = 2
+theme_override_constants/minimum_character_width = 1
 theme_override_font_sizes/font_size = 24
 text = "Macron"
 placeholder_text = "Enter Name"
@@ -110,4 +111,5 @@ layout_mode = 2
 text = "Back
 "
 
+[connection signal="pressed" from="VBoxContainer/NewGameButton" to="." method="_on_new_game_button_pressed"]
 [connection signal="pressed" from="VBoxContainer3/BackButton" to="." method="_on_back_button_pressed"]
