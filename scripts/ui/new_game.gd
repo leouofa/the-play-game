@@ -8,6 +8,7 @@ const SAVE_PATH = "user://save_slot_"
 var game_data = {}
 
 func _ready():
+	slot1.grab_focus()
 
 	for i in range(1, 4):  # range(start, end) where end is exclusive
 		var slot_name = "slot" + str(i)
