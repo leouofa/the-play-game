@@ -4,18 +4,21 @@ const SAVE_PATH = "user://save_slot_"
 var warning_label
 var warning_text
 var name_input
+var new_game_button
 var game_data = {}
 
 func _ready():
 	warning_label = $VBoxContainer/WarningLabel
 	warning_text = $VBoxContainer/WarningText
 	name_input = $VBoxContainer/NameInput
+	new_game_button = $VBoxContainer/NewGameButton
 
 	if slot_exists(Autoload.slot):
 		warning_label.visible = true
 		warning_text.visible = true
-	else:
-		print("slot is empty")
+
+	update_new_game_button_state()
+	
 
 func _on_back_button_pressed():
 	get_tree().change_scene_to_file("res://scenes/ui/new_game.tscn")
@@ -38,3 +41,9 @@ func save(save_slot):
 
 	file.store_var(game_data)
 	file.close()
+
+func _on_name_input_text_changed(_new_text):
+	update_new_game_button_state()
+
+func update_new_game_button_state():
+	new_game_button.disabled = name_input.text.length() < 1

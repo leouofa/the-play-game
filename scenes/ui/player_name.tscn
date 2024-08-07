@@ -111,5 +111,6 @@ layout_mode = 2
 text = "Back
 "
 
+[connection signal="text_changed" from="VBoxContainer/NameInput" to="." method="_on_name_input_text_changed"]
 [connection signal="pressed" from="VBoxContainer/NewGameButton" to="." method="_on_new_game_button_pressed"]
 [connection signal="pressed" from="VBoxContainer3/BackButton" to="." method="_on_back_button_pressed"]
