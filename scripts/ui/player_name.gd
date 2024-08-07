@@ -1,17 +1,15 @@
 extends Control
 
 const SAVE_PATH = "user://save_slot_"
-var warning_label
-var warning_text
-var name_input
-var new_game_button
+
+@onready var warning_label = $VBoxContainer/WarningLabel
+@onready var warning_text = $VBoxContainer/WarningText
+@onready var name_input = $VBoxContainer/NameInput
+@onready var new_game_button = $VBoxContainer/NewGameButton
+
 var game_data = {}
 
 func _ready():
-	warning_label = $VBoxContainer/WarningLabel
-	warning_text = $VBoxContainer/WarningText
-	name_input = $VBoxContainer/NameInput
-	new_game_button = $VBoxContainer/NewGameButton
 
 	if slot_exists(Autoload.slot):
 		warning_label.visible = true
@@ -30,13 +28,16 @@ func slot_exists(save_slot):
 
 func _on_new_game_button_pressed():
 	save(Autoload.slot)
+	get_tree().change_scene_to_file("res://scenes/levels/level1.tscn")
 
 func save(save_slot):
-	var file = FileAccess.open(SAVE_PATH + str(save_slot) + ".save", FileAccess.WRITE)
+	var file_path = SAVE_PATH + str(save_slot) + ".save"
+	var file = FileAccess.open(file_path, FileAccess.WRITE)
 	var username = name_input.text
 	
 	game_data = { 
-		"username": username 
+		"username": username,
+		"level": 1
 	}
 
 	file.store_var(game_data)
