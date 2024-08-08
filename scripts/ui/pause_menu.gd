@@ -2,16 +2,18 @@ extends Control
 
 func _ready():
 	$AnimationPlayer.play("RESET")
-	$PanelContainer/VBoxContainer/ResumeButton.grab_focus()
+	
 	
 
 func resume():
 	get_tree().paused = false
 	$AnimationPlayer.play_backwards("blur")
+	$PanelContainer/VBoxContainer/ResumeButton.release_focus()
 
 func pause():
 	get_tree().paused = true
 	$AnimationPlayer.play("blur")
+	$PanelContainer/VBoxContainer/ResumeButton.grab_focus()
 
 
 func testEsc():
