@@ -26,16 +26,19 @@ func _on_back_button_pressed():
 
 func _on_slot_one_pressed():
 	Autoload.slot = 1
-	get_tree().change_scene_to_file("res://scenes/ui/player_name.tscn")
+	goto_name_scene()
 
 
 func _on_slot_two_pressed():
 	Autoload.slot = 2
-	get_tree().change_scene_to_file("res://scenes/ui/player_name.tscn")
+	goto_name_scene()
 
 
 func _on_slot_three_pressed():
 	Autoload.slot = 3
+	goto_name_scene()
+
+func goto_name_scene():
 	get_tree().change_scene_to_file("res://scenes/ui/player_name.tscn")
 
 func load_data(save_slot):

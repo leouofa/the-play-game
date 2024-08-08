@@ -21,7 +21,7 @@ func testEsc():
 
 
 
-func _process(delta):
+func _process(_delta):
 	testEsc()
 
 
