@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://ce41t2vdi61vv"]
 
 [ext_resource type="Script" path="res://scripts/ui/continue_game.gd" id="1_uv5re"]
-[ext_resource type="Texture2D" uid="uid://di3imoyprtqts" path="res://assets/images/nebulas/Blue Nebula/Blue_Nebula_01-1024x1024.png" id="2_1gc8t"]
+[ext_resource type="Texture2D" uid="uid://daygdp8yh18na" path="res://assets/images/nebulas/Purple Nebula/Purple_Nebula_08-1024x1024.png" id="2_e5lgg"]
 [ext_resource type="Theme" uid="uid://byr76kqnb40al" path="res://themes/main_menu.tres" id="3_3fxf3"]
 
 [node name="Menu" type="Control"]
@@ -20,7 +20,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_1gc8t")
+texture = ExtResource("2_e5lgg")
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
 layout_mode = 1
