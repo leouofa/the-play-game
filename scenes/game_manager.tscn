@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://bev6by4am3u23"]
+
+[ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_uvh63"]
+[ext_resource type="FontFile" uid="uid://convhgiltgnsw" path="res://assets/fonts/PixelOperator8.ttf" id="2_6lh1t"]
+
+[node name="GameManager" type="Node"]
+script = ExtResource("1_uvh63")
+
+[node name="Hud" type="CanvasLayer" parent="."]
+
+[node name="ScoreLabel" type="Label" parent="Hud"]
+offset_left = 1009.0
+offset_top = 10.0
+offset_right = 1133.0
+offset_bottom = 33.0
+theme_override_fonts/font = ExtResource("2_6lh1t")
+theme_override_font_sizes/font_size = 16
+text = "Score"
+horizontal_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="LivesLabel" type="Label" parent="Hud"]
+offset_left = 13.0
+offset_top = 9.0
+offset_right = 112.0
+offset_bottom = 33.0
+theme_override_fonts/font = ExtResource("2_6lh1t")
+theme_override_font_sizes/font_size = 16
+text = "Lives"
+
+[node name="TimeLabel" type="Label" parent="Hud"]
+offset_left = 557.0
+offset_top = 9.0
+offset_right = 656.0
+offset_bottom = 33.0
+theme_override_fonts/font = ExtResource("2_6lh1t")
+theme_override_font_sizes/font_size = 16
+text = "Time"
+
+[node name="Timer" type="Timer" parent="Hud"]
+autostart = true
+
+[connection signal="timeout" from="Hud/Timer" to="." method="_on_timer_timeout"]

@@ -1,7 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://gw60c7r5hdaq"]
+[gd_scene load_steps=14 format=3 uid="uid://gw60c7r5hdaq"]
 
-[ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_020xk"]
-[ext_resource type="FontFile" uid="uid://convhgiltgnsw" path="res://assets/fonts/PixelOperator8.ttf" id="2_pfyrd"]
+[ext_resource type="PackedScene" uid="uid://bev6by4am3u23" path="res://scenes/game_manager.tscn" id="1_hgd8y"]
 [ext_resource type="Texture2D" uid="uid://c605lteint8st" path="res://assets/sprites/world_tileset.png" id="3_ew1v8"]
 [ext_resource type="PackedScene" uid="uid://y7u5evu33077" path="res://scenes/player.tscn" id="4_twfhv"]
 [ext_resource type="PackedScene" uid="uid://jb7xpxibx6hp" path="res://scenes/killzone.tscn" id="5_qe3nv"]
@@ -455,33 +454,8 @@ _data = {
 
 [node name="Game" type="Node2D"]
 
-[node name="GameManager" type="Node" parent="."]
+[node name="GameManager" parent="." instance=ExtResource("1_hgd8y")]
 unique_name_in_owner = true
-script = ExtResource("1_020xk")
-
-[node name="Hud" type="CanvasLayer" parent="GameManager"]
-visible = false
-
-[node name="ScoreLabel" type="Label" parent="GameManager/Hud"]
-offset_left = 1009.0
-offset_top = 10.0
-offset_right = 1133.0
-offset_bottom = 33.0
-theme_override_fonts/font = ExtResource("2_pfyrd")
-theme_override_font_sizes/font_size = 16
-text = "Score:"
-horizontal_alignment = 1
-autowrap_mode = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="LivesLabel" type="Label" parent="GameManager/Hud"]
-offset_left = 13.0
-offset_top = 9.0
-offset_right = 112.0
-offset_bottom = 33.0
-theme_override_fonts/font = ExtResource("2_pfyrd")
-theme_override_font_sizes/font_size = 16
-text = "Lives"
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(0, 9)
