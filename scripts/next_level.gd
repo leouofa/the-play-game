@@ -31,9 +31,16 @@ func save(save_slot):
 	var file = FileAccess.open(file_path, FileAccess.WRITE)
 	
 	game_data.level = Autoload.level
+	game_data["scores"][str(Autoload.level - 1)] = calculate_score()
 
 	file.store_var(game_data)
 	file.close()
+
+	print(game_data)
+
+func calculate_score():
+	var score = float(Autoload.score) / Autoload.time * 100
+	return score
 
 func slot_exists(save_slot):
 	var file_path = SAVE_PATH + str(save_slot) + ".save"
