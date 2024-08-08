@@ -40,7 +40,8 @@ func save(save_slot):
 	
 	game_data = { 
 		"username": username,
-		"level": 1
+		"level": 1,
+		"scores": { }
 	}
 
 	file.store_var(game_data)

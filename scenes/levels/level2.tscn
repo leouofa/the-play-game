@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://gw60c7r5hdaq"]
+[gd_scene load_steps=15 format=3 uid="uid://gw60c7r5hdaq"]
 
 [ext_resource type="PackedScene" uid="uid://bev6by4am3u23" path="res://scenes/game_manager.tscn" id="1_hgd8y"]
 [ext_resource type="Texture2D" uid="uid://c605lteint8st" path="res://assets/sprites/world_tileset.png" id="3_ew1v8"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://jb7xpxibx6hp" path="res://scenes/killzone.tscn" id="5_qe3nv"]
 [ext_resource type="PackedScene" uid="uid://g7cqyt56f0sk" path="res://scenes/coin.tscn" id="6_fndl6"]
 [ext_resource type="PackedScene" uid="uid://bg8dsandfue4l" path="res://scenes/platform.tscn" id="7_c01yk"]
+[ext_resource type="PackedScene" uid="uid://c6gqsq7bpg3hp" path="res://scenes/next_level.tscn" id="8_dealc"]
 [ext_resource type="PackedScene" uid="uid://cxun1bjt5g7w" path="res://scenes/slime.tscn" id="8_vtr44"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tqh17"]
@@ -508,3 +509,6 @@ position = Vector2(136, -12)
 
 [node name="slime" parent="." instance=ExtResource("8_vtr44")]
 position = Vector2(318, 105)
+
+[node name="NextLevel" parent="." instance=ExtResource("8_dealc")]
+position = Vector2(146, 86)
