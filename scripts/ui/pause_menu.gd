@@ -28,9 +28,6 @@ func _process(_delta):
 func _on_resume_button_pressed():
 	resume()
 
-func _on_restart_button_pressed():
-	get_tree().reload_current_scene()
-
-
 func _on_quit_button_pressed():
-	get_tree().quit()
+	resume()
+	get_tree().change_scene_to_file('res://scenes/ui/main_menu.tscn')
