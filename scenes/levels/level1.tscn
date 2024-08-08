@@ -470,7 +470,7 @@ offset_right = 1133.0
 offset_bottom = 33.0
 theme_override_fonts/font = ExtResource("2_m4o2l")
 theme_override_font_sizes/font_size = 16
-text = "Score:"
+text = "Score"
 horizontal_alignment = 1
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
@@ -484,11 +484,25 @@ theme_override_fonts/font = ExtResource("2_m4o2l")
 theme_override_font_sizes/font_size = 16
 text = "Lives"
 
+[node name="TimeLabel" type="Label" parent="GameManager/Hud"]
+offset_left = 557.0
+offset_top = 9.0
+offset_right = 656.0
+offset_bottom = 33.0
+theme_override_fonts/font = ExtResource("2_m4o2l")
+theme_override_font_sizes/font_size = 16
+text = "Time"
+
+[node name="Timer" type="Timer" parent="GameManager/Hud"]
+autostart = true
+
 [node name="PauseLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Pause Menu" parent="PauseLayer" instance=ExtResource("10_w4jbo")]
 
 [node name="TileMap" type="TileMap" parent="."]
+visible = false
 position = Vector2(0, 9)
 tile_set = SubResource("TileSet_4oylx")
 format = 2
@@ -501,6 +515,7 @@ layer_2/z_index = 6
 layer_2/tile_data = PackedInt32Array(65582, 131072, 4, 196654, 196608, 8, 393259, 262144, 9, 393260, 262144, 9, 393261, 262144, 9, 393263, 262144, 9, 393264, 262144, 9, 393265, 262144, 9, 393269, 262144, 9, 393270, 262144, 9)
 
 [node name="Player" parent="." instance=ExtResource("4_qytr6")]
+visible = false
 position = Vector2(31, 44)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -576,7 +591,11 @@ autoplay = "move"
 position = Vector2(136, -12)
 
 [node name="slime" parent="." instance=ExtResource("8_qn5fb")]
+visible = false
 position = Vector2(552, 89)
 
 [node name="NextLevel" parent="." instance=ExtResource("9_gngvk")]
+visible = false
 position = Vector2(160, 73)
+
+[connection signal="timeout" from="GameManager/Hud/Timer" to="GameManager" method="_on_timer_timeout"]
