@@ -1,7 +1,6 @@
-[gd_scene load_steps=17 format=3 uid="uid://wyps26l1s4iw"]
+[gd_scene load_steps=16 format=3 uid="uid://wyps26l1s4iw"]
 
-[ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_2u4mp"]
-[ext_resource type="FontFile" uid="uid://convhgiltgnsw" path="res://assets/fonts/PixelOperator8.ttf" id="2_m4o2l"]
+[ext_resource type="PackedScene" uid="uid://bev6by4am3u23" path="res://scenes/game_manager.tscn" id="1_murgc"]
 [ext_resource type="Texture2D" uid="uid://c605lteint8st" path="res://assets/sprites/world_tileset.png" id="3_or350"]
 [ext_resource type="PackedScene" uid="uid://y7u5evu33077" path="res://scenes/player.tscn" id="4_qytr6"]
 [ext_resource type="PackedScene" uid="uid://jb7xpxibx6hp" path="res://scenes/killzone.tscn" id="5_uu8os"]
@@ -457,44 +456,8 @@ _data = {
 
 [node name="Game" type="Node2D"]
 
-[node name="GameManager" type="Node" parent="."]
+[node name="GameManager" parent="." instance=ExtResource("1_murgc")]
 unique_name_in_owner = true
-script = ExtResource("1_2u4mp")
-
-[node name="Hud" type="CanvasLayer" parent="GameManager"]
-
-[node name="ScoreLabel" type="Label" parent="GameManager/Hud"]
-offset_left = 1009.0
-offset_top = 10.0
-offset_right = 1133.0
-offset_bottom = 33.0
-theme_override_fonts/font = ExtResource("2_m4o2l")
-theme_override_font_sizes/font_size = 16
-text = "Score"
-horizontal_alignment = 1
-autowrap_mode = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="LivesLabel" type="Label" parent="GameManager/Hud"]
-offset_left = 13.0
-offset_top = 9.0
-offset_right = 112.0
-offset_bottom = 33.0
-theme_override_fonts/font = ExtResource("2_m4o2l")
-theme_override_font_sizes/font_size = 16
-text = "Lives"
-
-[node name="TimeLabel" type="Label" parent="GameManager/Hud"]
-offset_left = 557.0
-offset_top = 9.0
-offset_right = 656.0
-offset_bottom = 33.0
-theme_override_fonts/font = ExtResource("2_m4o2l")
-theme_override_font_sizes/font_size = 16
-text = "Time"
-
-[node name="Timer" type="Timer" parent="GameManager/Hud"]
-autostart = true
 
 [node name="PauseLayer" type="CanvasLayer" parent="."]
 visible = false
@@ -502,7 +465,6 @@ visible = false
 [node name="Pause Menu" parent="PauseLayer" instance=ExtResource("10_w4jbo")]
 
 [node name="TileMap" type="TileMap" parent="."]
-visible = false
 position = Vector2(0, 9)
 tile_set = SubResource("TileSet_4oylx")
 format = 2
@@ -515,7 +477,6 @@ layer_2/z_index = 6
 layer_2/tile_data = PackedInt32Array(65582, 131072, 4, 196654, 196608, 8, 393259, 262144, 9, 393260, 262144, 9, 393261, 262144, 9, 393263, 262144, 9, 393264, 262144, 9, 393265, 262144, 9, 393269, 262144, 9, 393270, 262144, 9)
 
 [node name="Player" parent="." instance=ExtResource("4_qytr6")]
-visible = false
 position = Vector2(31, 44)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -595,7 +556,4 @@ visible = false
 position = Vector2(552, 89)
 
 [node name="NextLevel" parent="." instance=ExtResource("9_gngvk")]
-visible = false
 position = Vector2(160, 73)
-
-[connection signal="timeout" from="GameManager/Hud/Timer" to="GameManager" method="_on_timer_timeout"]

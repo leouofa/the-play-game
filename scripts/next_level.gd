@@ -15,6 +15,8 @@ func _on_body_entered(_body):
 	save(Autoload.slot)
 
 	var next_level_path = FILE_BEGIN + str(next_level_number) + ".tscn"
+	
+	Autoload.score = 0
 
 	get_tree().change_scene_to_file(next_level_path)
 
