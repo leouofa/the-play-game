@@ -7,9 +7,8 @@ const SAVE_PATH = "user://save_slot_"
 @onready var	slot3 = $VBoxContainer/SlotThree
 var game_data = {}
 
+# Called when the node enters the scene tree for the first time.
 func _ready():
-	slot1.grab_focus()
-
 	for i in range(1, 4):  # range(start, end) where end is exclusive
 		var slot_name = "slot" + str(i)
 		var slot_variable = get(slot_name)
@@ -18,25 +17,29 @@ func _ready():
 			load_data(i)
 			slot_variable.set_text(game_data.username)
 		else:
-			slot_variable.set_text("Empty")
+			slot_variable.disabled = true
+
 
 func _on_back_button_pressed():
 	get_tree().change_scene_to_file("res://scenes/ui/main_menu.tscn")
 
 
 func _on_slot_one_pressed():
-	Autoload.slot = 1
-	get_tree().change_scene_to_file("res://scenes/ui/player_name.tscn")
-
+	load_data(1)
+	change_level()
 
 func _on_slot_two_pressed():
-	Autoload.slot = 2
-	get_tree().change_scene_to_file("res://scenes/ui/player_name.tscn")
+	load_data(2)
+	change_level()
 
 
 func _on_slot_three_pressed():
-	Autoload.slot = 3
-	get_tree().change_scene_to_file("res://scenes/ui/player_name.tscn")
+	load_data(3)
+	change_level()
+
+func change_level():
+	get_tree().change_scene_to_file("res://scenes/levels/level"+str(game_data.level)+".tscn")
+
 
 func load_data(save_slot):
 	if slot_exists(save_slot):
