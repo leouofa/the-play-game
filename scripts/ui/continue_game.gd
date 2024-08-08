@@ -5,9 +5,11 @@ const SAVE_PATH = "user://save_slot_"
 @onready var	slot1 = $VBoxContainer/SlotOne
 @onready var	slot2 = $VBoxContainer/SlotTwo
 @onready var	slot3 = $VBoxContainer/SlotThree
+
+var focused = false
+
 var game_data = {}
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	for i in range(1, 4):  # range(start, end) where end is exclusive
 		var slot_name = "slot" + str(i)
@@ -16,6 +18,10 @@ func _ready():
 		if slot_exists(i):
 			load_data(i)
 			slot_variable.set_text(game_data.username)
+			if focused == false:
+				slot_variable.grab_focus()
+				focused = true
+				
 		else:
 			slot_variable.disabled = true
 

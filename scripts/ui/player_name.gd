@@ -10,10 +10,13 @@ const SAVE_PATH = "user://save_slot_"
 var game_data = {}
 
 func _ready():
+	name_input.text = "Macron" + str(Autoload.slot)
 
 	if slot_exists(Autoload.slot):
 		warning_label.visible = true
 		warning_text.visible = true
+
+	new_game_button.grab_focus()
 
 	update_new_game_button_state()
 	

@@ -1,16 +1,23 @@
 extends Control
 
+@onready var animation_player = $AnimationPlayer
+@onready var resume_button = $PanelContainer/VBoxContainer/ResumeButton
+@onready var quit_button = $PanelContainer/VBoxContainer/QuitButton
+
 func _ready():
-	$AnimationPlayer.play("RESET")
-	
+	animation_player.play("RESET")
 
 func resume():
 	get_tree().paused = false
-	$AnimationPlayer.play_backwards("blur")
+	animation_player.play_backwards("blur")
+	resume_button.release_focus()
+	quit_button.release_focus()
+	
 
 func pause():
 	get_tree().paused = true
-	$AnimationPlayer.play("blur")
+	animation_player.play("blur")
+	resume_button.grab_focus()
 
 
 func testEsc():
