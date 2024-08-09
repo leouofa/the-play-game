@@ -68,6 +68,7 @@ layout_mode = 2
 text = "Continue"
 
 [node name="LevelButton" type="Button" parent="VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "Choose Level"
 
