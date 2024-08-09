@@ -68,9 +68,12 @@ layout_mode = 2
 text = "Continue"
 
 [node name="LevelButton" type="Button" parent="VBoxContainer"]
-visible = false
 layout_mode = 2
 text = "Choose Level"
+
+[node name="HighScoreButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Highscores"
 
 [node name="QuitButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -79,4 +82,5 @@ text = "Quit"
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/ContinueButton" to="." method="_on_continue_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/LevelButton" to="." method="_on_level_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HighScoreButton" to="." method="_on_high_score_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
