@@ -1,12 +1,10 @@
-extends Control
+extends "res://scripts/ui/base.gd"
 
 func _on_level_1_button_pressed():
-	get_tree().change_scene_to_file("res://scenes/levels/level1.tscn")
-
+	goto_level('1')
 
 func _on_level_2_button_pressed():
-	get_tree().change_scene_to_file("res://scenes/levels/level2.tscn")
-
+	goto_level('2')
 
 func _on_back_button_pressed():
-	get_tree().change_scene_to_file("res://scenes/ui/main_menu.tscn")
+	goto_ui_scene("main_menu")
