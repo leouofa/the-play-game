@@ -43,4 +43,6 @@ func get_sorted_usernames_by_score(data):
 
 # Helper function to sort by score in descending order
 func _sort_by_score(a, b):
-	return b[1] - a[1]
+	if a[1] > b[1]:
+		return true
+	return false
