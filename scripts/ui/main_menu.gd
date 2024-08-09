@@ -1,7 +1,9 @@
 extends "res://scripts/ui/base.gd"
 
+@onready var start_button = $VBoxContainer/StartButton
+
 func _ready():
-	$VBoxContainer/StartButton.grab_focus()
+	start_button.grab_focus()
 	
 func _on_start_button_pressed():
 	goto_ui_scene("new_game")
