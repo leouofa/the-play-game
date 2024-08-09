@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://351oskhjxw52"]
 
 [ext_resource type="Script" path="res://scripts/ui/high_scores.gd" id="1_funsl"]
-[ext_resource type="Texture2D" uid="uid://daygdp8yh18na" path="res://assets/images/nebulas/Purple Nebula/Purple_Nebula_08-1024x1024.png" id="2_ra1f1"]
+[ext_resource type="Texture2D" uid="uid://bb77wxdb4vubc" path="res://assets/images/nebulas/Green Nebula/Green_Nebula_03-1024x1024.png" id="2_1xa2h"]
 [ext_resource type="Theme" uid="uid://byr76kqnb40al" path="res://themes/main_menu.tres" id="3_h8yom"]
 
 [node name="Menu" type="Control"]
@@ -20,7 +20,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_ra1f1")
+texture = ExtResource("2_1xa2h")
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -61,14 +61,17 @@ theme = ExtResource("3_h8yom")
 
 [node name="SlotOne" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+disabled = true
 text = "Slot 1"
 
 [node name="SlotTwo" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+disabled = true
 text = "Slot 2"
 
 [node name="SlotThree" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+disabled = true
 text = "Slot 3
 "
 
@@ -88,3 +91,5 @@ theme = ExtResource("3_h8yom")
 layout_mode = 2
 text = "Back
 "
+
+[connection signal="pressed" from="VBoxContainer3/BackButton" to="." method="_on_back_button_pressed"]
