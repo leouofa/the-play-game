@@ -2,6 +2,10 @@ extends "res://scripts/ui/base.gd"
 
 @onready var back_button = $VBoxContainer3/BackButton
 
+@onready var	slot1 = $VBoxContainer/SlotOne
+@onready var	slot2 = $VBoxContainer/SlotTwo
+@onready var	slot3 = $VBoxContainer/SlotThree
+
 var files = {}
 
 func _ready():
@@ -13,10 +17,17 @@ func _ready():
 			files[i] = game_data
 	
 	var sorted_scores = get_sorted_usernames_by_score(files)
-	
-	for entry in sorted_scores:
-		print("Username: %s, Total Score: %d" % [entry[0], entry[1]])
 
+	for i in range(1, 4):  # range(start, end) where end is exclusive
+		var slot_name = "slot" + str(i)
+		var slot_variable = get(slot_name)
+
+		if (i - 1) < sorted_scores.size():
+			slot_variable.set_text(sorted_scores[i-1][0] + " - " + str(sorted_scores[i-1][1]))
+		else:
+			slot_variable.set_text("Empty")
+			slot_variable.visible = false
+	
 func _on_back_button_pressed():
 	goto_ui_scene("main_menu")
 	
