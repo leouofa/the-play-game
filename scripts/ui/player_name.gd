@@ -1,13 +1,9 @@
-extends Control
-
-const SAVE_PATH = "user://save_slot_"
+extends "res://scripts/ui/base.gd"
 
 @onready var warning_label = $VBoxContainer/WarningLabel
 @onready var warning_text = $VBoxContainer/WarningText
 @onready var name_input = $VBoxContainer/NameInput
 @onready var new_game_button = $VBoxContainer/NewGameButton
-
-var game_data = {}
 
 func _ready():
 	name_input.text = "Macron" + str(Autoload.slot)
@@ -22,16 +18,11 @@ func _ready():
 	
 
 func _on_back_button_pressed():
-	get_tree().change_scene_to_file("res://scenes/ui/new_game.tscn")
-
-func slot_exists(save_slot):
-	var file_path = SAVE_PATH + str(save_slot) + ".save"
-	return FileAccess.file_exists(file_path)
-
+	goto_ui_scene("new_game")
 
 func _on_new_game_button_pressed():
 	save(Autoload.slot)
-	get_tree().change_scene_to_file("res://scenes/levels/level1.tscn")
+	goto_level('1')
 
 func save(save_slot):
 	var file_path = SAVE_PATH + str(save_slot) + ".save"
