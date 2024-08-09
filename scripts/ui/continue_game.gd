@@ -1,14 +1,10 @@
-extends Control
-
-const SAVE_PATH = "user://save_slot_"
+extends "res://scripts/ui/base.gd"
 
 @onready var	slot1 = $VBoxContainer/SlotOne
 @onready var	slot2 = $VBoxContainer/SlotTwo
 @onready var	slot3 = $VBoxContainer/SlotThree
 
 var focused = false
-
-var game_data = {}
 
 func _ready():
 	for i in range(1, 4):  # range(start, end) where end is exclusive
@@ -27,37 +23,18 @@ func _ready():
 
 
 func _on_back_button_pressed():
-	get_tree().change_scene_to_file("res://scenes/ui/main_menu.tscn")
-
+	goto_ui_scene("main_menu")
 
 func _on_slot_one_pressed():
-	load_data(1)
-	change_level()
+	change_level(1)
 
 func _on_slot_two_pressed():
-	load_data(2)
-	change_level()
-
+	change_level(2)
 
 func _on_slot_three_pressed():
-	load_data(3)
-	change_level()
+	change_level(3)
 
-func change_level():
-	get_tree().change_scene_to_file("res://scenes/levels/level"+str(game_data.level)+".tscn")
-
-
-func load_data(save_slot):
-	if slot_exists(save_slot):
-		var file_path = SAVE_PATH + str(save_slot) + ".save"
-		var savefile = FileAccess.open(file_path, FileAccess.READ)
-		game_data = savefile.get_var(true)
-
-
-func slot_exists(save_slot):
-	var file_path = SAVE_PATH + str(save_slot) + ".save"
-	return FileAccess.file_exists(file_path)
-	
-
-
-		
+func change_level(slot):
+	Autoload.slot = slot
+	load_data(slot)
+	goto_level(str(game_data.level))
