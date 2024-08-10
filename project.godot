@@ -26,7 +26,6 @@ Autoload="*res://scripts/autoload.gd"
 
 [display]
 
-window/size/mode=2
 window/stretch/mode="viewport"
 window/bg_color=Color(0.457857, 0.0550791, 0.227589, 1)
 window/image="res://images/splash.png"
