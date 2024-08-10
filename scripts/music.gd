@@ -10,4 +10,4 @@ func _on_change_level(level):
 	print("Changing Level: " + str(level))
 
 func _on_main_menu():
-	pass # Replace with function body.
+	print("Changing To Main Menu")
