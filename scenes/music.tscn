@@ -10,3 +10,6 @@ script = ExtResource("1_oev80")
 process_mode = 3
 stream = ExtResource("1_uuorw")
 autoplay = true
+
+[connection signal="change_level" from="." to="." method="_on_change_level"]
+[connection signal="main_menu" from="." to="." method="_on_main_menu"]
