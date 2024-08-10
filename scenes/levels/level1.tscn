@@ -430,7 +430,6 @@ unique_name_in_owner = true
 [node name="PauseLayer" type="CanvasLayer" parent="."]
 
 [node name="Pause Menu" parent="PauseLayer" instance=ExtResource("10_w4jbo")]
-visible = false
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 

@@ -10,6 +10,7 @@ func _ready():
 	lives_label.text =  "Lives: " + str(Autoload.lives)
 	score_label.text = "Score: " + str(Autoload.score)
 	time_label.text = "Time: " + str(Autoload.time)
+	print("Loaded Level")
 
 func add_point():
 	Autoload.score += 1
