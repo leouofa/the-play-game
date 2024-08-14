@@ -1,8 +1,24 @@
-[gd_scene load_steps=10 format=3 uid="uid://cxun1bjt5g7w"]
+[gd_scene load_steps=15 format=3 uid="uid://cxun1bjt5g7w"]
 
 [ext_resource type="Texture2D" uid="uid://0k2okbp8nmfb" path="res://assets/sprites/slime_green.png" id="1_uy38j"]
 [ext_resource type="Script" path="res://scripts/slime.gd" id="1_v0ltr"]
 [ext_resource type="PackedScene" uid="uid://jb7xpxibx6hp" path="res://scenes/killzone.tscn" id="2_apgqy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_50xeo"]
+atlas = ExtResource("1_uy38j")
+region = Rect2(0, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_peri7"]
+atlas = ExtResource("1_uy38j")
+region = Rect2(24, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8qfu"]
+atlas = ExtResource("1_uy38j")
+region = Rect2(48, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qj4qw"]
+atlas = ExtResource("1_uy38j")
+region = Rect2(72, 48, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_21uh8"]
 atlas = ExtResource("1_uy38j")
@@ -24,6 +40,23 @@ region = Rect2(72, 24, 24, 24)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_50xeo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_peri7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a8qfu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qj4qw")
+}],
+"loop": false,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_21uh8")
 }, {
 "duration": 1.0,
@@ -43,6 +76,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lnql0"]
 size = Vector2(12, 14)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2p368"]
+size = Vector2(20, 30)
+
 [node name="slime" type="Node2D"]
 script = ExtResource("1_v0ltr")
 
@@ -50,9 +86,8 @@ script = ExtResource("1_v0ltr")
 position = Vector2(0, -24)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_dfvd7")
+animation = &"death"
 autoplay = "default"
-frame = 2
-frame_progress = 0.203965
 
 [node name="Killzone" parent="." instance=ExtResource("2_apgqy")]
 
@@ -68,3 +103,11 @@ target_position = Vector2(12, 0)
 [node name="RayCastLeft" type="RayCast2D" parent="."]
 position = Vector2(0, -7)
 target_position = Vector2(-12, 0)
+
+[node name="hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(0, -15)
+shape = SubResource("RectangleShape2D_2p368")
+
+[connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]
