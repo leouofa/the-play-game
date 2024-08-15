@@ -16,3 +16,6 @@ func _on_visible_on_screen_enabler_2d_screen_exited():
 
 func bullet_deal_damage():
 	return DAMAGE
+
+func remove_bullet():
+	queue_free()

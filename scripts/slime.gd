@@ -27,6 +27,7 @@ func _on_hitbox_area_entered(area):
 	if area.has_method("bullet_deal_damage"):
 		var damage = area.bullet_deal_damage()
 		take_damage(damage)
+		area.remove_bullet()
 
 func take_damage(damage):
 	health = health - damage
@@ -39,9 +40,3 @@ func death():
 	SPEED = 0
 	animated_sprite.play("death")
 	killzone.queue_free()
-	await get_tree().create_timer(1).timeout
-
-	
-		
-
-		
