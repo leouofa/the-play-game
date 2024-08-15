@@ -8,8 +8,10 @@ Godot 4 Powered Side Scroller Adventure Game for Mac and PC
 ## Features
 - [x] Main Menu
 - [x] Level Selector
-- [ ] Robust Saving System
-- [ ] High Score System
+- [x] Robust Saving System
+- [x] High Score System
+- [x] Ranged Combat
+- [ ] Shader Effects
 
 
 ## Plot Summary:
