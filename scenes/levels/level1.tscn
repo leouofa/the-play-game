@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://wyps26l1s4iw"]
+[gd_scene load_steps=22 format=3 uid="uid://wyps26l1s4iw"]
 
 [ext_resource type="PackedScene" uid="uid://bev6by4am3u23" path="res://scenes/game_manager.tscn" id="1_murgc"]
 [ext_resource type="Texture2D" uid="uid://b444hrclvhfdy" path="res://assets/images/parallax/dusk/sky.png" id="3_3uft1"]
@@ -14,7 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://diiomh72jf8jm" path="res://assets/images/parallax/dusk/trees.png" id="8_qne6j"]
 [ext_resource type="PackedScene" uid="uid://c6gqsq7bpg3hp" path="res://scenes/next_level.tscn" id="9_gngvk"]
 [ext_resource type="PackedScene" uid="uid://dj7igolwo2wmg" path="res://scenes/ui/pause_menu.tscn" id="10_w4jbo"]
-[ext_resource type="PackedScene" uid="uid://8op1gxitl7an" path="res://scenes/bullet.tscn" id="15_n5w51"]
 
 [sub_resource type="Gradient" id="Gradient_tpp8t"]
 
@@ -635,6 +634,3 @@ position = Vector2(552, 89)
 
 [node name="NextLevel" parent="." instance=ExtResource("9_gngvk")]
 position = Vector2(907, 52)
-
-[node name="bullet" parent="." instance=ExtResource("15_n5w51")]
-position = Vector2(11, 65)
