@@ -12,6 +12,7 @@ var bullet = preload("res://scenes/bullet.tscn")
 
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var marker_2d = $Marker2D
+@onready var animation_player = $AnimationPlayer
 
 var bullet_direction = Vector2.RIGHT
 
@@ -62,6 +63,10 @@ func handle_firing():
 		bullet_instance.direction = bullet_direction
 		get_parent().add_child(bullet_instance)
 		bullet_instance.global_position = marker_2d.global_position
+		
+		animation_player.play("RESET")
+		animation_player.play("shot")
+
 		await get_tree().create_timer(GUN_COOLDOWN_TIMEOUT).timeout
 		gun_cooldown = true
 

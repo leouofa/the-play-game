@@ -1,9 +1,10 @@
-[gd_scene load_steps=39 format=3 uid="uid://y7u5evu33077"]
+[gd_scene load_steps=43 format=3 uid="uid://y7u5evu33077"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_vcnas"]
 [ext_resource type="Texture2D" uid="uid://br32qx5dvbs46" path="res://assets/sprites/macron/idle.png" id="2_q84np"]
 [ext_resource type="Texture2D" uid="uid://btrybv03wdsl1" path="res://assets/sprites/macron/jump.png" id="3_l8lx6"]
 [ext_resource type="Texture2D" uid="uid://dp1tp0sovg1mx" path="res://assets/sprites/macron/run.png" id="4_jeebq"]
+[ext_resource type="AudioStream" uid="uid://ffajodasi758" path="res://assets/sounds/shot.wav" id="5_c8p47"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aaudl"]
 atlas = ExtResource("2_q84np")
@@ -250,6 +251,42 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1ah28"]
 size = Vector2(6, 31)
 
+[sub_resource type="Animation" id="Animation_2oec7"]
+resource_name = "shot"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_1ubyx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x8r2b"]
+_data = {
+"RESET": SubResource("Animation_1ubyx"),
+"shot": SubResource("Animation_2oec7")
+}
+
 [node name="Player" type="CharacterBody2D"]
 z_index = 5
 collision_layer = 2
@@ -268,3 +305,12 @@ shape = SubResource("RectangleShape2D_1ah28")
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(7, -18)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_x8r2b")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_c8p47")
+bus = &"SFX"
