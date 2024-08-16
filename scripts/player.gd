@@ -63,7 +63,8 @@ func handle_firing():
 		bullet_instance.direction = bullet_direction
 		get_parent().add_child(bullet_instance)
 		bullet_instance.global_position = marker_2d.global_position
-		animation_player.stop(true)
+		
+		animation_player.play("RESET")
 		animation_player.play("shot")
 
 		await get_tree().create_timer(GUN_COOLDOWN_TIMEOUT).timeout
