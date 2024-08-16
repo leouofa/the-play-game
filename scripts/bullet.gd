@@ -1,12 +1,13 @@
 extends Area2D
 
-const SPEED = 300
+const SPEED = 400
 const DAMAGE = 100
+@onready var animation_player = $AnimationPlayer
 
 var direction = Vector2.RIGHT
 
 func _ready():
-	pass
+	animation_player.play("pulse")
 
 func _process(delta):
 	position += (direction * SPEED) * delta
