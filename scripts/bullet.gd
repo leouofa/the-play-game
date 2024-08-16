@@ -1,6 +1,6 @@
 extends Area2D
 
-const SPEED = 100
+const SPEED = 400
 const DAMAGE = 100
 @onready var animation_player = $AnimationPlayer
 
