@@ -1,6 +1,9 @@
 extends CharacterBody2D
 
-const SPEED = 130.0
+var SPEED = 130.0
+var REGULAR_SPEED = 130
+var DASH_SPEED = 200
+
 const JUMP_VELOCITY = -300.0
 const GUN_COOLDOWN_TIMEOUT = 0.3
 
@@ -19,6 +22,7 @@ var bullet_direction = Vector2.RIGHT
 func _physics_process(delta):
 	apply_gravity(delta)
 	handle_jump()
+	handle_dash()
 	handle_movement()
 	update_animation()
 	move_and_slide()
@@ -32,8 +36,15 @@ func handle_jump():
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
+func handle_dash():
+	if Input.is_action_pressed("dash"):
+		SPEED = DASH_SPEED
+	else:
+		SPEED = REGULAR_SPEED
+
 func handle_movement():
 	var input_direction = Input.get_axis("move_left", "move_right")
+
 	update_direction(input_direction)
 	velocity.x = input_direction * SPEED if input_direction != 0 else move_toward(velocity.x, 0, SPEED)
 
