@@ -110,6 +110,7 @@ turbulence_noise_scale = 0.047
 
 [node name="bullet" type="Area2D"]
 scale = Vector2(0.5, 0.5)
+collision_layer = 8
 script = ExtResource("1_4cyp8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -135,4 +136,7 @@ libraries = {
 amount = 100
 process_material = SubResource("ParticleProcessMaterial_oxo48")
 
+[node name="Marker2D" type="Marker2D" parent="."]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]

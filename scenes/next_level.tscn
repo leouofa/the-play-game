@@ -71,6 +71,7 @@ animations = [{
 radius = 13.0
 
 [node name="NextLevel" type="Area2D"]
+collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_l03ah")
 
