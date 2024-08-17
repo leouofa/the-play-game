@@ -44,7 +44,6 @@ func handle_dash():
 
 func handle_movement():
 	var input_direction = Input.get_axis("move_left", "move_right")
-
 	update_direction(input_direction)
 	velocity.x = input_direction * SPEED if input_direction != 0 else move_toward(velocity.x, 0, SPEED)
 
