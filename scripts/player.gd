@@ -48,10 +48,10 @@ func handle_jump():
 			jump_player.play("jump")
 			jump_timer.start()
 
-		# elif jump_count > 0 :
-		# 	var flash_color = Color(217 / 255.0, 99 / 255.0, 0 / 255.0)
-		# 	animated_sprite.material.set_shader_parameter("flash_color", flash_color)
-		# 	animated_sprite.material.set_shader_parameter("flash_modifier", 0.7)
+		elif jump_count > 0 :
+			var flash_color = Color(217 / 255.0, 99 / 255.0, 0 / 255.0)
+			animated_sprite.material.set_shader_parameter("flash_color", flash_color)
+			animated_sprite.material.set_shader_parameter("flash_modifier", 0.15)
 
 
 		jump_count += 1
