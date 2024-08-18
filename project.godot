@@ -22,7 +22,7 @@ config/macos_native_icon="res://assets/images/splash.icns"
 [autoload]
 
 Music="*res://scenes/music.tscn"
-Autoload="*res://scripts/autoload.gd"
+Autoload="*res://scenes/autoload.tscn"
 
 [display]
 

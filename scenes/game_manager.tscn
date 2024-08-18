@@ -29,10 +29,20 @@ theme_override_fonts/font = ExtResource("2_6lh1t")
 theme_override_font_sizes/font_size = 16
 text = "Lives"
 
-[node name="TimeLabel" type="Label" parent="Hud"]
-offset_left = 557.0
+[node name="HealthLabel" type="Label" parent="Hud"]
+offset_left = 173.0
 offset_top = 9.0
-offset_right = 656.0
+offset_right = 272.0
+offset_bottom = 33.0
+theme_override_fonts/font = ExtResource("2_6lh1t")
+theme_override_font_sizes/font_size = 16
+text = "Health
+"
+
+[node name="TimeLabel" type="Label" parent="Hud"]
+offset_left = 853.0
+offset_top = 9.0
+offset_right = 952.0
 offset_bottom = 33.0
 theme_override_fonts/font = ExtResource("2_6lh1t")
 theme_override_font_sizes/font_size = 16
@@ -40,5 +50,10 @@ text = "Time"
 
 [node name="Timer" type="Timer" parent="Hud"]
 autostart = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Hud"]
+offset_right = 40.0
+offset_bottom = 40.0
+size_flags_horizontal = 0
 
 [connection signal="timeout" from="Hud/Timer" to="." method="_on_timer_timeout"]
