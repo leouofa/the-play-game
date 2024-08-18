@@ -16,8 +16,13 @@ var bullet = preload("res://scenes/bullet.tscn")
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var marker_2d = $Marker2D
 @onready var shot_player = $ShotPlayer
+
 @onready var jump_player = $JumpPlayer
-@onready var jump_timer = $JumpTimer
+@onready var jump_timer = $JumpPlayer/JumpTimer
+
+@onready var double_jump_player = $DoubleJumpPlayer
+@onready var double_jump_timer = $DoubleJumpPlayer/DoubleJumpTimer
+
 
 var bullet_direction = Vector2.RIGHT
 
@@ -46,12 +51,16 @@ func handle_jump():
 		if jump_count == 0:
 			jump_player.play("RESET")
 			jump_player.play("jump")
-			jump_timer.start()
+			jump_timer.start() 
 
 		elif jump_count > 0 :
+			double_jump_player.play("RESET")
+			double_jump_player.play("double_jump")
+			double_jump_timer.start()
+			
 			var flash_color = Color(217 / 255.0, 99 / 255.0, 0 / 255.0)
 			animated_sprite.material.set_shader_parameter("flash_color", flash_color)
-			animated_sprite.material.set_shader_parameter("flash_modifier", 0.15)
+			animated_sprite.material.set_shader_parameter("flash_modifier", 0.02)
 
 
 		jump_count += 1
@@ -107,5 +116,9 @@ func handle_firing():
 
 
 func _on_jump_timer_timeout():
-	animated_sprite.material.set_shader_parameter("flash_modifier", 0)
 	jump_player.play("RESET")
+
+
+func _on_double_jump_timer_timeout():
+	animated_sprite.material.set_shader_parameter("flash_modifier", 0)
+	double_jump_player.play("RESET")
