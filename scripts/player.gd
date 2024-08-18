@@ -46,6 +46,10 @@ func handle_jump():
 			var flash_color = Color(217 / 255.0, 99 / 255.0, 0 / 255.0)
 			animated_sprite.material.set_shader_parameter("flash_color", flash_color)
 			animated_sprite.material.set_shader_parameter("flash_modifier", 0.7)
+
+			animation_player.play("RESET")
+			animation_player.play("jump")
+
 			jump_timer.start()
 
 		jump_count += 1
@@ -102,3 +106,4 @@ func handle_firing():
 
 func _on_jump_timer_timeout():
 	animated_sprite.material.set_shader_parameter("flash_modifier", 0)
+	animation_player.play("RESET")
