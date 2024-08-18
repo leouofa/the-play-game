@@ -57,8 +57,3 @@ func _on_flash_timer_timeout():
 
 func _on_killzone_body_entered(body):
 	Autoload.take_damage(body, PLAYER_DAMAGE)
-
-	# var new_health = Autoload.health - PLAYER_DAMAGE
-	# Autoload.health = new_health
-	#
-	# body.get_node("CollisionShape2D").queue_free()
