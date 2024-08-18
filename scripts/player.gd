@@ -4,7 +4,7 @@ var SPEED = 130.0
 var REGULAR_SPEED = 130
 var DASH_SPEED = 200
 
-const JUMP_VELOCITY = -300.0
+const BASE_JUMP_VELOCITY = -300.0  # Changed from JUMP_VELOCITY to BASE_JUMP_VELOCITY
 const GUN_COOLDOWN_TIMEOUT = 0.3
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -38,7 +38,8 @@ func apply_gravity(delta):
 
 func handle_jump():
 	if Input.is_action_just_pressed("jump") and jump_count < MAX_JUMPS:
-		velocity.y = JUMP_VELOCITY
+		var jump_velocity = BASE_JUMP_VELOCITY / pow(1.2, jump_count)
+		velocity.y = jump_velocity
 		jump_count += 1
 
 func reset_jump_count():
