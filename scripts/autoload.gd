@@ -11,8 +11,18 @@ var level : = 1
 
 const MAX_HEALTH = 100
 
-func death():
+func take_damage(body, damage):
+	var new_health = health - damage
+	health = new_health
+
+	if health <= 0:
+		death(body)
+
+
+
+func death(body):
 	lives -= 1
+	body.get_node("CollisionShape2D").queue_free()
 
 func check_and_do_level_reset():
 	if lives <= 0:
