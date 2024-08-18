@@ -23,6 +23,8 @@ var bullet = preload("res://scenes/bullet.tscn")
 @onready var double_jump_player = $DoubleJumpPlayer
 @onready var double_jump_timer = $DoubleJumpPlayer/DoubleJumpTimer
 
+@onready var dashing_player = $DashingPlayer
+@onready var dashing_timer = $DashingPlayer/DashingTimer
 
 var bullet_direction = Vector2.RIGHT
 
@@ -73,6 +75,11 @@ func reset_jump_count():
 func handle_dash():
 	if Input.is_action_pressed("dash"):
 		SPEED = DASH_SPEED
+
+		dashing_player.play("RESET")
+		dashing_player.play("dash")
+		dashing_timer.start()
+
 	else:
 		SPEED = REGULAR_SPEED
 
@@ -122,3 +129,7 @@ func _on_jump_timer_timeout():
 func _on_double_jump_timer_timeout():
 	animated_sprite.material.set_shader_parameter("flash_modifier", 0)
 	double_jump_player.play("RESET")
+
+
+func _on_dashing_timer_timeout():
+	dashing_player.play("RESET")

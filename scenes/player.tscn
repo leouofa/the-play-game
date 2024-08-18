@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://y7u5evu33077"]
+[gd_scene load_steps=63 format=3 uid="uid://y7u5evu33077"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_vcnas"]
 [ext_resource type="Shader" path="res://shaders/flash.gdshader" id="2_lc4c1"]
@@ -274,6 +274,33 @@ scale_max = 3.0
 scale_curve = SubResource("CurveTexture_c7drf")
 color = Color(0.685139, 0.410425, 0.0381034, 1)
 
+[sub_resource type="Gradient" id="Gradient_fyy8p"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0.0097561, 0.534959)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ea1uo"]
+gradient = SubResource("Gradient_fyy8p")
+
+[sub_resource type="Curve" id="Curve_xchm2"]
+_data = [Vector2(0.000753012, 0.349952), 0.0, 0.0, 0, 0, Vector2(0.487199, 0.737296), 2.19925, 2.19925, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_r05jk"]
+curve = SubResource("Curve_xchm2")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_kpb25"]
+particle_flag_disable_z = true
+gravity = Vector3(-98, 2.08165e-12, 2.08165e-12)
+scale_min = 0.0
+scale_max = 3.0
+scale_curve = SubResource("CurveTexture_r05jk")
+color = Color(0.84, 0.462, 0, 1)
+color_ramp = SubResource("GradientTexture1D_ea1uo")
+hue_variation_max = 0.07
+turbulence_enabled = true
+turbulence_noise_scale = 2.324
+turbulence_influence_min = 0.0
+
 [sub_resource type="Animation" id="Animation_1ubyx"]
 length = 0.001
 tracks/0/type = "value"
@@ -310,33 +337,6 @@ _data = {
 "shot": SubResource("Animation_2oec7")
 }
 
-[sub_resource type="Animation" id="Animation_560gc"]
-resource_name = "jump"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("JumpParticles:emitting")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("JumpPlayer/JumpNoise:playing")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
 [sub_resource type="Animation" id="Animation_67ogm"]
 length = 0.001
 tracks/0/type = "value"
@@ -364,18 +364,12 @@ tracks/1/keys = {
 "values": [false]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_oxf7t"]
-_data = {
-"RESET": SubResource("Animation_67ogm"),
-"jump": SubResource("Animation_560gc")
-}
-
-[sub_resource type="Animation" id="Animation_hixx3"]
-resource_name = "double_jump"
+[sub_resource type="Animation" id="Animation_560gc"]
+resource_name = "jump"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("DoubleJumpParticles:emitting")
+tracks/0/path = NodePath("JumpParticles:emitting")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -383,6 +377,24 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("JumpPlayer/JumpNoise:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oxf7t"]
+_data = {
+"RESET": SubResource("Animation_67ogm"),
+"jump": SubResource("Animation_560gc")
 }
 
 [sub_resource type="Animation" id="Animation_13xsf"]
@@ -400,10 +412,61 @@ tracks/0/keys = {
 "values": [false]
 }
 
+[sub_resource type="Animation" id="Animation_hixx3"]
+resource_name = "double_jump"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DoubleJumpParticles:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_slwac"]
 _data = {
 "RESET": SubResource("Animation_13xsf"),
 "double_jump": SubResource("Animation_hixx3")
+}
+
+[sub_resource type="Animation" id="Animation_lw8mb"]
+resource_name = "dash"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DashingParticles:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_dkcgp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DashingParticles:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7n1d1"]
+_data = {
+"RESET": SubResource("Animation_dkcgp"),
+"dash": SubResource("Animation_lw8mb")
 }
 
 [node name="Player" type="CharacterBody2D"]
@@ -437,6 +500,13 @@ amount = 10
 process_material = SubResource("ParticleProcessMaterial_jdbyx")
 lifetime = 0.3
 
+[node name="DashingParticles" type="GPUParticles2D" parent="."]
+position = Vector2(-3, -18)
+emitting = false
+amount = 25
+process_material = SubResource("ParticleProcessMaterial_kpb25")
+lifetime = 0.5
+
 [node name="ShotPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_x8r2b")
@@ -466,5 +536,14 @@ libraries = {
 [node name="DoubleJumpTimer" type="Timer" parent="DoubleJumpPlayer"]
 wait_time = 0.205
 
+[node name="DashingPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_7n1d1")
+}
+
+[node name="DashingTimer" type="Timer" parent="DashingPlayer"]
+wait_time = 0.25
+
 [connection signal="timeout" from="JumpPlayer/JumpTimer" to="." method="_on_jump_timer_timeout"]
 [connection signal="timeout" from="DoubleJumpPlayer/DoubleJumpTimer" to="." method="_on_double_jump_timer_timeout"]
+[connection signal="timeout" from="DashingPlayer/DashingTimer" to="." method="_on_dashing_timer_timeout"]
