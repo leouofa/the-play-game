@@ -25,8 +25,13 @@ var bullet = preload("res://scenes/bullet.tscn")
 
 @onready var dashing_player = $DashingPlayer
 @onready var dashing_timer = $DashingPlayer/DashingTimer
+@onready var dashing_particles = $DashingParticles
+
 
 var bullet_direction = Vector2.RIGHT
+
+var dash_gravity_direction = Vector3(-98, 0, 0)
+var	dashing_gravity_x_pos = -3
 
 var jump_count = 0
 const MAX_JUMPS = 2
@@ -91,12 +96,19 @@ func handle_movement():
 func update_direction(input_direction):
 	if input_direction > 0:
 		bullet_direction = Vector2.RIGHT
+		dash_gravity_direction = Vector3(-98, 0, 0)
+		dashing_gravity_x_pos = -3
 		animated_sprite.flip_h = false
 		marker_2d.position.x = abs(marker_2d.position.x)
 	elif input_direction < 0:
 		bullet_direction = Vector2.LEFT
+		dash_gravity_direction = Vector3(98, 0, 0)
+		dashing_gravity_x_pos = 3
 		animated_sprite.flip_h = true
 		marker_2d.position.x = -abs(marker_2d.position.x)
+
+	dashing_particles.process_material.set("gravity", dash_gravity_direction)
+	dashing_particles.position = Vector2(dashing_gravity_x_pos, dashing_particles.position.y)
 
 func update_animation():
 	if is_on_floor():
