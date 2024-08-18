@@ -3,6 +3,8 @@ extends Node
 @onready var score_label = $Hud/ScoreLabel
 @onready var lives_label = $Hud/LivesLabel
 @onready var time_label = $Hud/TimeLabel
+@onready var health_label = $Hud/HealthLabel
+
 
 var elapsed_time = 0
 
@@ -10,6 +12,7 @@ func _ready():
 	lives_label.text =  "Lives: " + str(Autoload.lives)
 	score_label.text = "Score: " + str(Autoload.score)
 	time_label.text = "Time: " + str(Autoload.time)
+	health_label.text = "Health: " + str(Autoload.health)
 	Music.emit_signal("change_level", Autoload.level)
 
 func add_point():
