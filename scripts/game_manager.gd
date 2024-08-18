@@ -4,6 +4,8 @@ extends Node
 @onready var lives_label = $Hud/LivesLabel
 @onready var time_label = $Hud/TimeLabel
 @onready var health_label = $Hud/HealthLabel
+@onready var dash_label = $Hud/DashLabel
+
 
 
 var elapsed_time = 0
@@ -13,6 +15,7 @@ func _ready():
 	score_label.text = "Score: " + str(Autoload.score)
 	time_label.text = "Time: " + str(Autoload.time)
 	health_label.text = "Health: " + str(Autoload.health)
+	dash_label.text = "Dash: " + str(Autoload.dash)
 	Music.emit_signal("change_level", Autoload.level)
 
 func _process(delta):
