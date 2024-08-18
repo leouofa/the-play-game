@@ -356,7 +356,12 @@ shape = SubResource("RectangleShape2D_1ah28")
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(7, -18)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="ShotPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_x8r2b")
+}
+
+[node name="JumpPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_x8r2b")
 }

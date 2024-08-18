@@ -15,7 +15,8 @@ var bullet = preload("res://scenes/bullet.tscn")
 
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var marker_2d = $Marker2D
-@onready var animation_player = $AnimationPlayer
+@onready var shot_player = $ShotPlayer
+@onready var jump_player = $JumpPlayer
 @onready var jump_timer = $JumpTimer
 
 var bullet_direction = Vector2.RIGHT
@@ -47,8 +48,8 @@ func handle_jump():
 			animated_sprite.material.set_shader_parameter("flash_color", flash_color)
 			animated_sprite.material.set_shader_parameter("flash_modifier", 0.7)
 
-			animation_player.play("RESET")
-			animation_player.play("jump")
+			jump_player.play("RESET")
+			jump_player.play("jump")
 
 			jump_timer.start()
 
@@ -97,8 +98,8 @@ func handle_firing():
 		get_parent().add_child(bullet_instance)
 		bullet_instance.global_position = marker_2d.global_position
 		
-		animation_player.play("RESET")
-		animation_player.play("shot")
+		shot_player.play("RESET")
+		shot_player.play("shot")
 
 		await get_tree().create_timer(GUN_COOLDOWN_TIMEOUT).timeout
 		gun_cooldown = true
@@ -106,4 +107,4 @@ func handle_firing():
 
 func _on_jump_timer_timeout():
 	animated_sprite.material.set_shader_parameter("flash_modifier", 0)
-	animation_player.play("RESET")
+	jump_player.play("RESET")
