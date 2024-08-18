@@ -4,7 +4,7 @@ var SPEED = 130.0
 var REGULAR_SPEED = 130
 var DASH_SPEED = 200
 
-const BASE_JUMP_VELOCITY = -300.0  # Changed from JUMP_VELOCITY to BASE_JUMP_VELOCITY
+const BASE_JUMP_VELOCITY = -300.0
 const GUN_COOLDOWN_TIMEOUT = 0.3
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
