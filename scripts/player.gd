@@ -19,6 +19,9 @@ var bullet = preload("res://scenes/bullet.tscn")
 
 var bullet_direction = Vector2.RIGHT
 
+var jump_count = 0
+const MAX_JUMPS = 2
+
 func _physics_process(delta):
 	apply_gravity(delta)
 	handle_jump()
@@ -27,14 +30,20 @@ func _physics_process(delta):
 	update_animation()
 	move_and_slide()
 	handle_firing()
+	reset_jump_count()
 
 func apply_gravity(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
 
 func handle_jump():
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and jump_count < MAX_JUMPS:
 		velocity.y = JUMP_VELOCITY
+		jump_count += 1
+
+func reset_jump_count():
+	if is_on_floor():
+		jump_count = 0
 
 func handle_dash():
 	if Input.is_action_pressed("dash"):
@@ -79,4 +88,3 @@ func handle_firing():
 
 		await get_tree().create_timer(GUN_COOLDOWN_TIMEOUT).timeout
 		gun_cooldown = true
-
