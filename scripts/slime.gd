@@ -1,5 +1,7 @@
 extends Node2D
 
+const PLAYER_DAMAGE = 25
+
 var SPEED = 60
 var health = 200
 var dead = false
@@ -52,3 +54,7 @@ func death():
 
 func _on_flash_timer_timeout():
 	animated_sprite.material.set_shader_parameter("flash_modifier", 0)
+
+func _on_killzone_body_entered(_body):
+	var new_health = Autoload.health - PLAYER_DAMAGE
+	Autoload.health = new_health

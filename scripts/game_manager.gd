@@ -15,6 +15,9 @@ func _ready():
 	health_label.text = "Health: " + str(Autoload.health)
 	Music.emit_signal("change_level", Autoload.level)
 
+func _process(delta):
+	health_label.text = "Health: " + str(Autoload.health)
+
 func add_point():
 	Autoload.score += 1
 	score_label.text = "Score: " + str(Autoload.score)
