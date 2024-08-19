@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var SPEED = 130.0
 var REGULAR_SPEED = 130
-var DASH_SPEED = 200
+var DASH_SPEED = 300
 
 const BASE_JUMP_VELOCITY = -300.0
 const GUN_COOLDOWN_TIMEOUT = 0.3
@@ -27,6 +27,10 @@ var bullet = preload("res://scenes/bullet.tscn")
 @onready var dashing_timer = $DashingPlayer/DashingTimer
 @onready var dashing_particles = $DashingParticles
 
+# Hud Timers
+@onready var dash_timer = $DashTimer
+
+
 
 var bullet_direction = Vector2.RIGHT
 
@@ -39,7 +43,7 @@ const MAX_JUMPS = 2
 func _physics_process(delta):
 	apply_gravity(delta)
 	handle_jump()
-	handle_dash()
+	handle_dash(delta)
 	handle_movement()
 	update_animation()
 	move_and_slide()
@@ -77,14 +81,22 @@ func reset_jump_count():
 	if is_on_floor():
 		jump_count = 0
 
-func handle_dash():
-	if Input.is_action_pressed("dash"):
+func handle_dash(delta):
+	if Input.is_action_pressed("dash") and Autoload.dash > 0:
 		SPEED = DASH_SPEED
+
+		if dash_timer.is_stopped():
+			dash_timer.start(0.10)
 
 		dashing_player.play("RESET")
 		dashing_player.play("dash")
 		dashing_timer.start()
 
+	elif not Input.is_action_pressed("dash"):
+		if not dash_timer.is_stopped():
+			dash_timer.stop()  # Stop the timer when dash is not pressed
+
+		Autoload.dash = min(Autoload.dash + 1, Autoload.MAX_DASH)
 	else:
 		SPEED = REGULAR_SPEED
 
@@ -137,11 +149,16 @@ func handle_firing():
 func _on_jump_timer_timeout():
 	jump_player.play("RESET")
 
-
 func _on_double_jump_timer_timeout():
 	animated_sprite.material.set_shader_parameter("flash_modifier", 0)
 	double_jump_player.play("RESET")
 
-
 func _on_dashing_timer_timeout():
 	dashing_player.play("RESET")
+
+func _on_dash_timer_timeout():
+	Autoload.dash -= 1
+
+	if Autoload.dash <= 0:
+		dash_timer.stop()  # Stop the timer if dash is depleted
+		Autoload.dash = 0

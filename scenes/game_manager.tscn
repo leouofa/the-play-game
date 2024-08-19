@@ -30,13 +30,23 @@ theme_override_font_sizes/font_size = 16
 text = "Lives"
 
 [node name="HealthLabel" type="Label" parent="Hud"]
-offset_left = 173.0
+offset_left = 151.0
 offset_top = 9.0
-offset_right = 272.0
+offset_right = 250.0
 offset_bottom = 33.0
 theme_override_fonts/font = ExtResource("2_6lh1t")
 theme_override_font_sizes/font_size = 16
 text = "Health
+"
+
+[node name="DashLabel" type="Label" parent="Hud"]
+offset_left = 324.0
+offset_top = 9.0
+offset_right = 423.0
+offset_bottom = 33.0
+theme_override_fonts/font = ExtResource("2_6lh1t")
+theme_override_font_sizes/font_size = 16
+text = "Dash
 "
 
 [node name="TimeLabel" type="Label" parent="Hud"]

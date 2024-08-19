@@ -6,10 +6,12 @@ var score : int = 0
 var time	: int = 0
 var lives : int = 3
 var health :	int = 100
+var dash :	int = 10
 
 var level : = 1
 
 const MAX_HEALTH = 100
+const MAX_DASH = 10
 
 @onready var timer = $Timer
 
@@ -42,4 +44,5 @@ func _on_timer_timeout():
 	check_and_do_level_reset()
 	get_tree().reload_current_scene()
 	health = MAX_HEALTH
+	dash = MAX_DASH
 	Engine.time_scale = 1.0
