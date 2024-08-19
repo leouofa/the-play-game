@@ -9,6 +9,8 @@ const GUN_COOLDOWN_TIMEOUT = 0.3
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+var current_timescale = 1.0
+
 var gun_equiped = true
 var gun_cooldown = true
 var bullet = preload("res://scenes/bullet.tscn")
@@ -27,10 +29,12 @@ var bullet = preload("res://scenes/bullet.tscn")
 @onready var dashing_timer = $DashingPlayer/DashingTimer
 @onready var dashing_particles = $DashingParticles
 
+
 @onready var damage_timer = $DamageTimer
 
 # Hud Timers
 @onready var dash_timer = $DashTimer
+@onready var slow_timer = $SlowTimer
 
 
 
@@ -46,6 +50,7 @@ func _physics_process(delta):
 	apply_gravity(delta)
 	handle_jump()
 	handle_dash()
+	handle_slow()
 	handle_movement()
 	update_animation()
 	move_and_slide()
@@ -77,6 +82,21 @@ func handle_jump():
 
 
 		jump_count += 1
+
+
+func handle_slow():
+	var new_timescale = 1.0
+
+	if Input.is_action_pressed("slow") and Autoload.slow > 0:
+		new_timescale = 0.5
+	# elif not Input.is_action_pressed("slow"):
+	# 	new_timescale = 1.0
+	# else:
+	# 	new_timescale = 1.0
+
+	if current_timescale != new_timescale:
+		current_timescale = new_timescale
+		Engine.time_scale = current_timescale
 
 
 func reset_jump_count():
@@ -167,6 +187,9 @@ func _on_dash_timer_timeout():
 		dash_timer.stop()  # Stop the timer if dash is depleted
 		Autoload.dash = 0
 
+func _on_slow_timer_timeout():
+	pass # Replace with function body.
+
 func show_damage():
 	var flash_color = Color(1.0, 1.0, 1.0)
 	animated_sprite.material.set_shader_parameter("flash_color", flash_color)
@@ -177,3 +200,4 @@ func show_damage():
 func _on_damage_timer_timeout():
 	animated_sprite.material.set_shader_parameter("flash_modifier", 0)
 	damage_timer.stop()
+

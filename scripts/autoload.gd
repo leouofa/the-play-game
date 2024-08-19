@@ -6,12 +6,14 @@ var score : int = 0
 var time	: int = 0
 var lives : int = 3
 var health :	int = 100
-var dash :	int = 10
+var dash 	:	int = 10
+var slow	:	int = 20
 
 var level : = 1
 
 const MAX_HEALTH = 100
 const MAX_DASH = 10
+const MAX_SLOW = 10
 
 @onready var timer = $Timer
 
