@@ -18,8 +18,9 @@ func _ready():
 	dash_label.text = "Dash: " + str(Autoload.dash)
 	Music.emit_signal("change_level", Autoload.level)
 
-func _process(delta):
+func _process(_delta):
 	health_label.text = "Health: " + str(Autoload.health)
+	dash_label.text = "Dash: " + str(Autoload.dash)
 
 func add_point():
 	Autoload.score += 1
