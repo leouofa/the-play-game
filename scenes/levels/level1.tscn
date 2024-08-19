@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://wyps26l1s4iw"]
+[gd_scene load_steps=25 format=3 uid="uid://wyps26l1s4iw"]
 
 [ext_resource type="PackedScene" uid="uid://bev6by4am3u23" path="res://scenes/game_manager.tscn" id="1_murgc"]
 [ext_resource type="Texture2D" uid="uid://b444hrclvhfdy" path="res://assets/images/parallax/dusk/sky.png" id="3_3uft1"]
@@ -32,7 +32,9 @@ color_ramp = SubResource("Gradient_tpp8t")
 noise = SubResource("FastNoiseLite_uvexy")
 
 [sub_resource type="Environment" id="Environment_t50w3"]
+resource_local_to_scene = true
 background_mode = 3
+ssr_enabled = true
 glow_enabled = true
 glow_normalized = true
 glow_intensity = 1.0
@@ -45,6 +47,68 @@ glow_hdr_luminance_cap = 23.24
 glow_map_strength = 0.79
 glow_map = SubResource("NoiseTexture2D_32cee")
 adjustment_enabled = true
+
+[sub_resource type="Animation" id="Animation_pyain"]
+resource_name = "world"
+length = 8.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WorldEnvironment:environment:glow_strength")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4, 8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.8, 0.9, 0.8]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WorldEnvironment:environment:adjustment_contrast")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4, 8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [1.0, 1.05, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_opa1h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WorldEnvironment:environment:glow_strength")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.8]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WorldEnvironment:environment:adjustment_contrast")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hnc4k"]
+_data = {
+"RESET": SubResource("Animation_opa1h"),
+"world": SubResource("Animation_pyain")
+}
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tqh17"]
 texture = ExtResource("3_or350")
@@ -457,6 +521,12 @@ position = Vector2(49, -120)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_t50w3")
+
+[node name="WorldAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_hnc4k")
+}
+autoplay = "world"
 
 [node name="GameManager" parent="." instance=ExtResource("1_murgc")]
 unique_name_in_owner = true
