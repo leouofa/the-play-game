@@ -99,17 +99,6 @@ func handle_slow():
 
 		Autoload.slow = min(Autoload.slow + 1, Autoload.MAX_SLOW)
 
-	# else:
-	# 		slow_timer.stop()
-	# 		Autoload.slow = min(Autoload.slow + 1, Autoload.MAX_SLOW)
-
-	
-
-	# elif not Input.is_action_pressed("slow"):
-	# 	new_timescale = 1.0
-	# else:
-	# 	new_timescale = 1.0
-
 	if current_timescale != new_timescale:
 		current_timescale = new_timescale
 		Engine.time_scale = current_timescale

@@ -7,13 +7,13 @@ var time	: int = 0
 var lives : int = 3
 var health :	int = 100
 var dash 	:	int = 10
-var slow	:	int = 20
+var slow	:	int = 5
 
 var level : = 1
 
 const MAX_HEALTH = 100
 const MAX_DASH = 10
-const MAX_SLOW = 10
+const MAX_SLOW = 5
 
 @onready var timer = $Timer
 
