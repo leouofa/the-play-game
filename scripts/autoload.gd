@@ -11,7 +11,7 @@ var dash :	int = 10
 var level : = 1
 
 const MAX_HEALTH = 100
-const MAX_DASH = 100
+const MAX_DASH = 10
 
 @onready var timer = $Timer
 

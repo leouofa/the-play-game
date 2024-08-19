@@ -82,12 +82,7 @@ func reset_jump_count():
 		jump_count = 0
 
 func handle_dash(delta):
-	# if not Input.is_action_pressed("dash"):
-	# 		dash_released = true  # Set to true when dash button is released
-	# 		print("not dashiing ..", dash_released)
-
 	if Input.is_action_pressed("dash") and Autoload.dash > 0:
-		print("dashiing")
 		SPEED = DASH_SPEED
 
 		if dash_timer.is_stopped():
@@ -96,11 +91,8 @@ func handle_dash(delta):
 		dashing_player.play("RESET")
 		dashing_player.play("dash")
 		dashing_timer.start()
-		# dash_released = false  # Set to false when dash is pressed
-	elif not Input.is_action_pressed("dash"):
-		print("recharging")
-		SPEED = REGULAR_SPEED
 
+	elif not Input.is_action_pressed("dash"):
 		if not dash_timer.is_stopped():
 			dash_timer.stop()  # Stop the timer when dash is not pressed
 
@@ -109,7 +101,6 @@ func handle_dash(delta):
 		SPEED = REGULAR_SPEED
 
 func handle_movement():
-	print(SPEED)
 	var input_direction = Input.get_axis("move_left", "move_right")
 	update_direction(input_direction)
 	velocity.x = input_direction * SPEED if input_direction != 0 else move_toward(velocity.x, 0, SPEED)
