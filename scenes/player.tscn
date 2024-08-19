@@ -547,6 +547,9 @@ wait_time = 0.25
 [node name="DashTimer" type="Timer" parent="."]
 wait_time = 0.1
 
+[node name="SlowTimer" type="Timer" parent="."]
+wait_time = 0.1
+
 [node name="DamageTimer" type="Timer" parent="."]
 wait_time = 0.25
 
@@ -554,4 +557,5 @@ wait_time = 0.25
 [connection signal="timeout" from="DoubleJumpPlayer/DoubleJumpTimer" to="." method="_on_double_jump_timer_timeout"]
 [connection signal="timeout" from="DashingPlayer/DashingTimer" to="." method="_on_dashing_timer_timeout"]
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
+[connection signal="timeout" from="SlowTimer" to="." method="_on_slow_timer_timeout"]
 [connection signal="timeout" from="DamageTimer" to="." method="_on_damage_timer_timeout"]
