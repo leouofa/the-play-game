@@ -83,6 +83,9 @@ func handle_jump():
 
 		jump_count += 1
 
+func reset_jump_count():
+	if is_on_floor():
+		jump_count = 0
 
 func handle_slow():
 	var new_timescale = 1.0
@@ -103,12 +106,9 @@ func handle_slow():
 		current_timescale = new_timescale
 		Engine.time_scale = current_timescale
 
-
-func reset_jump_count():
-	if is_on_floor():
-		jump_count = 0
-
 func handle_dash():
+	SPEED = REGULAR_SPEED
+
 	if Input.is_action_pressed("dash") and Autoload.dash > 0:
 		SPEED = DASH_SPEED
 
@@ -126,8 +126,6 @@ func handle_dash():
 			dash_timer.stop()  # Stop the timer when dash is not pressed
 
 		Autoload.dash = min(Autoload.dash + 1, Autoload.MAX_DASH)
-	else:
-		SPEED = REGULAR_SPEED
 
 func handle_movement():
 	var input_direction = Input.get_axis("move_left", "move_right")
