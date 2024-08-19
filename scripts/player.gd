@@ -92,9 +92,16 @@ func handle_slow():
 
 		if slow_timer.is_stopped():
 			slow_timer.start(0.10)
-	else:
+	elif not Input.is_action_pressed("slow"):
+
+		if not slow_timer.is_stopped():
 			slow_timer.stop()
-			Autoload.slow = min(Autoload.slow + 1, Autoload.MAX_SLOW)
+
+		Autoload.slow = min(Autoload.slow + 1, Autoload.MAX_SLOW)
+
+	# else:
+	# 		slow_timer.stop()
+	# 		Autoload.slow = min(Autoload.slow + 1, Autoload.MAX_SLOW)
 
 	
 
