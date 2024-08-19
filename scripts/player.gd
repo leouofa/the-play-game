@@ -27,6 +27,8 @@ var bullet = preload("res://scenes/bullet.tscn")
 @onready var dashing_timer = $DashingPlayer/DashingTimer
 @onready var dashing_particles = $DashingParticles
 
+@onready var damage_timer = $DamageTimer
+
 # Hud Timers
 @onready var dash_timer = $DashTimer
 
@@ -43,7 +45,7 @@ const MAX_JUMPS = 2
 func _physics_process(delta):
 	apply_gravity(delta)
 	handle_jump()
-	handle_dash(delta)
+	handle_dash()
 	handle_movement()
 	update_animation()
 	move_and_slide()
@@ -81,7 +83,7 @@ func reset_jump_count():
 	if is_on_floor():
 		jump_count = 0
 
-func handle_dash(delta):
+func handle_dash():
 	if Input.is_action_pressed("dash") and Autoload.dash > 0:
 		SPEED = DASH_SPEED
 
@@ -93,6 +95,8 @@ func handle_dash(delta):
 		dashing_timer.start()
 
 	elif not Input.is_action_pressed("dash"):
+		SPEED = REGULAR_SPEED
+
 		if not dash_timer.is_stopped():
 			dash_timer.stop()  # Stop the timer when dash is not pressed
 
@@ -162,3 +166,14 @@ func _on_dash_timer_timeout():
 	if Autoload.dash <= 0:
 		dash_timer.stop()  # Stop the timer if dash is depleted
 		Autoload.dash = 0
+
+func show_damage():
+	var flash_color = Color(1.0, 1.0, 1.0)
+	animated_sprite.material.set_shader_parameter("flash_color", flash_color)
+	animated_sprite.material.set_shader_parameter("flash_modifier", 0.8)
+
+	damage_timer.start()
+
+func _on_damage_timer_timeout():
+	animated_sprite.material.set_shader_parameter("flash_modifier", 0)
+	damage_timer.stop()

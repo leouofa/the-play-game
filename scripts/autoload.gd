@@ -19,6 +19,8 @@ func take_damage(body, damage):
 	var new_health = health - damage
 	health = new_health
 
+	body.show_damage()
+
 	if health <= 0:
 		death(body)
 
