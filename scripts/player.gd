@@ -89,6 +89,15 @@ func handle_slow():
 
 	if Input.is_action_pressed("slow") and Autoload.slow > 0:
 		new_timescale = 0.5
+
+		if slow_timer.is_stopped():
+			slow_timer.start(0.10)
+	else:
+			slow_timer.stop()
+			Autoload.slow = min(Autoload.slow + 1, Autoload.MAX_SLOW)
+
+	
+
 	# elif not Input.is_action_pressed("slow"):
 	# 	new_timescale = 1.0
 	# else:
@@ -184,11 +193,15 @@ func _on_dash_timer_timeout():
 	Autoload.dash -= 1
 
 	if Autoload.dash <= 0:
-		dash_timer.stop()  # Stop the timer if dash is depleted
+		dash_timer.stop()
 		Autoload.dash = 0
 
 func _on_slow_timer_timeout():
-	pass # Replace with function body.
+	Autoload.slow -= 1
+
+	if Autoload.slow <= 0:
+		dash_timer.stop()
+		Autoload.slow = 0
 
 func show_damage():
 	var flash_color = Color(1.0, 1.0, 1.0)
