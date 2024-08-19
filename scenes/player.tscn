@@ -11,7 +11,7 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0wh87"]
 resource_local_to_scene = true
 shader = ExtResource("2_lc4c1")
-shader_parameter/flash_color = Color(0.849657, 0.389635, 0, 1)
+shader_parameter/flash_color = Color(0, 0.0235294, 0.835294, 1)
 shader_parameter/flash_modifier = 0.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aaudl"]
@@ -544,18 +544,22 @@ libraries = {
 [node name="DashingTimer" type="Timer" parent="DashingPlayer"]
 wait_time = 0.25
 
+[node name="DamageTimer" type="Timer" parent="."]
+wait_time = 0.25
+
+[node name="SlowingTimer" type="Timer" parent="."]
+wait_time = 0.1
+
 [node name="DashTimer" type="Timer" parent="."]
 wait_time = 0.1
 
 [node name="SlowTimer" type="Timer" parent="."]
 wait_time = 0.1
 
-[node name="DamageTimer" type="Timer" parent="."]
-wait_time = 0.25
-
 [connection signal="timeout" from="JumpPlayer/JumpTimer" to="." method="_on_jump_timer_timeout"]
 [connection signal="timeout" from="DoubleJumpPlayer/DoubleJumpTimer" to="." method="_on_double_jump_timer_timeout"]
 [connection signal="timeout" from="DashingPlayer/DashingTimer" to="." method="_on_dashing_timer_timeout"]
+[connection signal="timeout" from="DamageTimer" to="." method="_on_damage_timer_timeout"]
+[connection signal="timeout" from="SlowingTimer" to="." method="_on_slowing_timer_timeout"]
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="SlowTimer" to="." method="_on_slow_timer_timeout"]
-[connection signal="timeout" from="DamageTimer" to="." method="_on_damage_timer_timeout"]
