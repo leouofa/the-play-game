@@ -29,8 +29,9 @@ var bullet = preload("res://scenes/bullet.tscn")
 @onready var dashing_timer = $DashingPlayer/DashingTimer
 @onready var dashing_particles = $DashingParticles
 
-
 @onready var damage_timer = $DamageTimer
+@onready var slowing_timer = $SlowingTimer
+
 
 # Hud Timers
 @onready var dash_timer = $DashTimer
@@ -95,6 +96,12 @@ func handle_slow():
 
 		if slow_timer.is_stopped():
 			slow_timer.start(0.10)
+
+		slowing_timer.start()
+
+		var flash_color = Color(0 / 255.0, 6 / 255.0, 213 / 255.0)
+		animated_sprite.material.set_shader_parameter("flash_color", flash_color)
+		animated_sprite.material.set_shader_parameter("flash_modifier", 0.25)
 	elif not Input.is_action_pressed("slow"):
 
 		if not slow_timer.is_stopped():
@@ -208,3 +215,7 @@ func _on_damage_timer_timeout():
 	animated_sprite.material.set_shader_parameter("flash_modifier", 0)
 	damage_timer.stop()
 
+
+func _on_slowing_timer_timeout():
+	animated_sprite.material.set_shader_parameter("flash_modifier", 0)
+	slowing_timer.stop()
