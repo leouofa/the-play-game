@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://g7cqyt56f0sk" path="res://scenes/coin.tscn" id="6_f0q2r"]
 [ext_resource type="Texture2D" uid="uid://c0rnq2i52cmdc" path="res://assets/images/parallax/dusk/far-mountains.png" id="6_lo1ej"]
 [ext_resource type="Texture2D" uid="uid://v8ay8jdwfnrv" path="res://assets/images/parallax/dusk/mountains.png" id="7_7833j"]
-[ext_resource type="PackedScene" uid="uid://cxun1bjt5g7w" path="res://scenes/slime.tscn" id="8_qn5fb"]
+[ext_resource type="PackedScene" uid="uid://cxun1bjt5g7w" path="res://scenes/agent.tscn" id="8_qn5fb"]
 [ext_resource type="Texture2D" uid="uid://diiomh72jf8jm" path="res://assets/images/parallax/dusk/trees.png" id="8_qne6j"]
 [ext_resource type="PackedScene" uid="uid://c6gqsq7bpg3hp" path="res://scenes/next_level.tscn" id="9_gngvk"]
 [ext_resource type="PackedScene" uid="uid://dj7igolwo2wmg" path="res://scenes/ui/pause_menu.tscn" id="10_w4jbo"]
@@ -699,7 +699,7 @@ position = Vector2(968, -137)
 
 [node name="Platforms" type="Node" parent="."]
 
-[node name="slime" parent="." instance=ExtResource("8_qn5fb")]
+[node name="Agent" parent="." instance=ExtResource("8_qn5fb")]
 position = Vector2(552, 89)
 
 [node name="NextLevel" parent="." instance=ExtResource("9_gngvk")]
