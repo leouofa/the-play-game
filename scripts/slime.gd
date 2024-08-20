@@ -53,7 +53,6 @@ func death():
 	killzone.queue_free()
 	hitbox.queue_free()
 
-
 func _on_flash_timer_timeout():
 	animated_sprite.material.set_shader_parameter("flash_modifier", 0)
 

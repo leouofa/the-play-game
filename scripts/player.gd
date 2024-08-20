@@ -5,7 +5,7 @@ var REGULAR_SPEED = 130
 var DASH_SPEED = 300
 
 const BASE_JUMP_VELOCITY = -300.0
-const GUN_COOLDOWN_TIMEOUT = 0.3
+var GUN_COOLDOWN_TIMEOUT = 0.3
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -90,6 +90,8 @@ func reset_jump_count():
 
 func handle_slow():
 	var new_timescale = 1.0
+	GUN_COOLDOWN_TIMEOUT = 0.3
+
 
 	if Input.is_action_pressed("slow") and Autoload.slow > 0:
 		new_timescale = 0.5
@@ -102,6 +104,8 @@ func handle_slow():
 		var flash_color = Color(0 / 255.0, 6 / 255.0, 213 / 255.0)
 		animated_sprite.material.set_shader_parameter("flash_color", flash_color)
 		animated_sprite.material.set_shader_parameter("flash_modifier", 0.25)
+
+		GUN_COOLDOWN_TIMEOUT = 0.10
 	elif not Input.is_action_pressed("slow"):
 
 		if not slow_timer.is_stopped():
