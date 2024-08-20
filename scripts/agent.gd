@@ -1,9 +1,9 @@
 extends Node2D
 
-const PLAYER_DAMAGE = 25
+@export var PLAYER_DAMAGE = 25
+@export var SPEED = 60
+@export var HEALTH = 200
 
-var SPEED = 60
-var health = 200
 var dead = false
 
 var direction = 1
@@ -15,7 +15,6 @@ var direction = 1
 @onready var hitbox = $hitbox
 @onready var flash_timer = $FlashTimer
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if ray_cast_right.is_colliding():
 		direction = -1
@@ -34,12 +33,12 @@ func _on_hitbox_area_entered(area):
 		area.remove_bullet()
 
 func take_damage(damage):
-	health = health - damage
+	HEALTH = HEALTH - damage
 
 	if !dead:
 		flash()
 
-	if health <= 0 and !dead:
+	if HEALTH <= 0 and !dead:
 		death()
 
 func flash():
