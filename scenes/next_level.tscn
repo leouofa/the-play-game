@@ -72,21 +72,6 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_2son6"]
 radius = 13.0
 
-[sub_resource type="Animation" id="Animation_gcevk"]
-resource_name = "transition_out"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/ColorRect:material:shader_parameter/cutoff")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1.62451, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-
 [sub_resource type="Animation" id="Animation_qi2w4"]
 length = 0.001
 tracks/0/type = "value"
@@ -123,7 +108,7 @@ tracks/0/path = NodePath("CanvasLayer/ColorRect:material:shader_parameter/cutoff
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1.86607, 1.6245),
 "update": 0,
 "values": [1.0, 0.0]
@@ -141,6 +126,21 @@ tracks/1/keys = {
 "values": [true]
 }
 
+[sub_resource type="Animation" id="Animation_gcevk"]
+resource_name = "transition_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ColorRect:material:shader_parameter/cutoff")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1.62451, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nofoc"]
 _data = {
 "RESET": SubResource("Animation_qi2w4"),
@@ -151,10 +151,10 @@ _data = {
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gp5me"]
 shader = ExtResource("3_4uml7")
 shader_parameter/cutoff = 0.0
-shader_parameter/wave_size = 0.06
-shader_parameter/wave_frequency = 0.097
+shader_parameter/wave_size = 0.011
+shader_parameter/wave_frequency = 0.036
 shader_parameter/wave_speed = 1.077
-shader_parameter/wave_foam_size = 0.057
+shader_parameter/wave_foam_size = 0.1
 shader_parameter/foam_color = Color(0, 0, 0, 0.654902)
 
 [node name="NextLevel" type="Area2D"]
@@ -189,6 +189,6 @@ offset_right = 1152.0
 offset_bottom = 648.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-color = Color(0, 0.227451, 0.94902, 1)
+color = Color(0.92549, 0.180392, 0.00392157, 1)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
