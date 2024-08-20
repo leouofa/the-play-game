@@ -507,8 +507,9 @@ autoplay = "move"
 [node name="Platform2" parent="Platforms" instance=ExtResource("7_c01yk")]
 position = Vector2(136, -12)
 
-[node name="slime" parent="." instance=ExtResource("8_vtr44")]
+[node name="Agent" parent="." instance=ExtResource("8_vtr44")]
 position = Vector2(318, 105)
+default_flash_modifier = 0.5
 
 [node name="NextLevel" parent="." instance=ExtResource("8_dealc")]
 position = Vector2(146, 86)
