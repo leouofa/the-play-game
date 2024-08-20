@@ -14,6 +14,8 @@ var direction = 1
 @onready var killzone = $Killzone
 @onready var hitbox = $hitbox
 @onready var flash_timer = $FlashTimer
+@onready var hit_player = $HitPlayer
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -38,6 +40,7 @@ func take_damage(damage):
 
 	if !dead:
 		flash()
+		hit_player.play()
 
 	if health <= 0 and !dead:
 		death()

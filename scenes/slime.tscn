@@ -1,7 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://cxun1bjt5g7w"]
+[gd_scene load_steps=18 format=3 uid="uid://cxun1bjt5g7w"]
 
 [ext_resource type="Script" path="res://scripts/slime.gd" id="1_v0ltr"]
 [ext_resource type="Shader" path="res://shaders/flash.gdshader" id="2_bph84"]
+[ext_resource type="AudioStream" uid="uid://cqlfr5glh6lml" path="res://assets/sounds/explosion.wav" id="4_5tu1f"]
 [ext_resource type="Texture2D" uid="uid://bdbmtp7bqru82" path="res://assets/sprites/agent.png" id="4_ahxrg"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_a8rdp"]
@@ -126,6 +127,10 @@ collision_mask = 2
 position = Vector2(0, -15)
 scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_lnql0")
+
+[node name="HitPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_5tu1f")
+bus = &"SFX"
 
 [connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="timeout" from="FlashTimer" to="." method="_on_flash_timer_timeout"]
