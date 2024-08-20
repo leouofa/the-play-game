@@ -4,6 +4,9 @@ extends Node2D
 @export var SPEED = 60
 @export var HEALTH = 200
 
+@export var default_flash_color = Color(1, 1, 1, 1)
+@export_range(0.0, 1.0) var default_flash_modifier = 0.0
+
 var dead = false
 
 var direction = 1
@@ -14,6 +17,10 @@ var direction = 1
 @onready var killzone = $Killzone
 @onready var hitbox = $hitbox
 @onready var flash_timer = $FlashTimer
+
+func _ready():
+	animated_sprite.material.set_shader_parameter("flash_color", default_flash_color)
+	animated_sprite.material.set_shader_parameter("flash_modifier", default_flash_modifier)
 
 func _process(delta):
 	if ray_cast_right.is_colliding():
@@ -53,7 +60,8 @@ func death():
 	hitbox.queue_free()
 
 func _on_flash_timer_timeout():
-	animated_sprite.material.set_shader_parameter("flash_modifier", 0)
+	animated_sprite.material.set_shader_parameter("flash_color", default_flash_color)
+	animated_sprite.material.set_shader_parameter("flash_modifier", default_flash_modifier)
 
 func _on_killzone_body_entered(body):
 	Autoload.take_damage(body, PLAYER_DAMAGE)
