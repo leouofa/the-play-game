@@ -7,6 +7,7 @@
 script = ExtResource("1_uvh63")
 
 [node name="Hud" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="ScoreLabel" type="Label" parent="Hud"]
 offset_left = 1009.0
