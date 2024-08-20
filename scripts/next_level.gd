@@ -4,6 +4,15 @@ const FILE_BEGIN = "res://scenes/levels/level"
 const SAVE_PATH = "user://save_slot_"
 
 var game_data = {}
+@onready var canvas_layer = $CanvasLayer
+@onready var animation_player = $AnimationPlayer
+
+
+func _ready():
+	canvas_layer.show()
+	animation_player.play("transition_out")
+	await animation_player.animation_finished
+
 
 func _on_body_entered(_body):
 	load_data(Autoload.slot)
@@ -15,8 +24,11 @@ func _on_body_entered(_body):
 	save(Autoload.slot)
 
 	var next_level_path = FILE_BEGIN + str(next_level_number) + ".tscn"
-	
+
 	Autoload.score = 0
+
+	animation_player.play("transition_in")
+	await animation_player.animation_finished
 
 	get_tree().change_scene_to_file(next_level_path)
 

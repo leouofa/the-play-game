@@ -1,7 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://c6gqsq7bpg3hp"]
+[gd_scene load_steps=20 format=3 uid="uid://c6gqsq7bpg3hp"]
 
 [ext_resource type="Texture2D" uid="uid://dwcxd6bs0oicd" path="res://assets/sprites/portal.png" id="1_jafli"]
 [ext_resource type="Script" path="res://scripts/next_level.gd" id="1_l03ah"]
+[ext_resource type="AudioStream" uid="uid://dsm8dk4ns68a2" path="res://assets/sounds/win.wav" id="3_3ob3u"]
+[ext_resource type="Shader" path="res://shaders/ui/next_level.gdshader" id="3_4uml7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y3jw6"]
 atlas = ExtResource("1_jafli")
@@ -70,6 +72,91 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_2son6"]
 radius = 13.0
 
+[sub_resource type="Animation" id="Animation_gcevk"]
+resource_name = "transition_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ColorRect:material:shader_parameter/cutoff")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1.62451, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_qi2w4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ColorRect:material:shader_parameter/cutoff")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WinPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_wucqr"]
+resource_name = "transition_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ColorRect:material:shader_parameter/cutoff")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1.86607, 1.6245),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WinPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nofoc"]
+_data = {
+"RESET": SubResource("Animation_qi2w4"),
+"transition_in": SubResource("Animation_wucqr"),
+"transition_out": SubResource("Animation_gcevk")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gp5me"]
+shader = ExtResource("3_4uml7")
+shader_parameter/cutoff = 0.0
+shader_parameter/wave_size = 0.06
+shader_parameter/wave_frequency = 0.097
+shader_parameter/wave_speed = 1.077
+shader_parameter/wave_foam_size = 0.057
+shader_parameter/foam_color = Color(0, 0, 0, 0.654902)
+
 [node name="NextLevel" type="Area2D"]
 collision_layer = 4
 collision_mask = 2
@@ -83,6 +170,25 @@ frame_progress = 0.214023
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_2son6")
 
+[node name="WinPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_3ob3u")
+volume_db = 22.788
+bus = &"SFX"
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_nofoc")
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_gp5me")
+offset_right = 1152.0
+offset_bottom = 648.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0, 0.227451, 0.94902, 1)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
