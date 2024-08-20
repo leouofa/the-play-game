@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://cxun1bjt5g7w"]
 
-[ext_resource type="Script" path="res://scripts/slime.gd" id="1_v0ltr"]
+[ext_resource type="Script" path="res://scripts/agent.gd" id="1_v0ltr"]
 [ext_resource type="Shader" path="res://shaders/flash.gdshader" id="2_bph84"]
 [ext_resource type="Texture2D" uid="uid://bdbmtp7bqru82" path="res://assets/sprites/agent.png" id="4_ahxrg"]
 
@@ -92,7 +92,7 @@ size = Vector2(10, 30)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lnql0"]
 size = Vector2(5, 15)
 
-[node name="slime" type="Node2D"]
+[node name="Agent" type="Node2D"]
 script = ExtResource("1_v0ltr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
