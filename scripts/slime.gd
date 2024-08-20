@@ -12,6 +12,7 @@ var direction = 1
 @onready var ray_cast_right = $RayCastRight
 @onready var ray_cast_left = $RayCastLeft
 @onready var killzone = $Killzone
+@onready var hitbox = $hitbox
 @onready var flash_timer = $FlashTimer
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -50,6 +51,7 @@ func death():
 	SPEED = 0
 	animated_sprite.play("death")
 	killzone.queue_free()
+	hitbox.queue_free()
 
 
 func _on_flash_timer_timeout():
