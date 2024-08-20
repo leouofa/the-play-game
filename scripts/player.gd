@@ -105,7 +105,7 @@ func handle_slow():
 		animated_sprite.material.set_shader_parameter("flash_color", flash_color)
 		animated_sprite.material.set_shader_parameter("flash_modifier", 0.25)
 
-		GUN_COOLDOWN_TIMEOUT = 0.10
+		GUN_COOLDOWN_TIMEOUT = 0.3
 	elif not Input.is_action_pressed("slow"):
 
 		if not slow_timer.is_stopped():
