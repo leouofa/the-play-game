@@ -97,7 +97,7 @@ script = ExtResource("1_v0ltr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_a8rdp")
-position = Vector2(2.08165e-12, -16)
+position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_dfvd7")
 autoplay = "default"
 
