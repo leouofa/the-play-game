@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://btrybv03wdsl1" path="res://assets/sprites/macron/jump.png" id="3_l8lx6"]
 [ext_resource type="Texture2D" uid="uid://dp1tp0sovg1mx" path="res://assets/sprites/macron/run.png" id="4_jeebq"]
 [ext_resource type="AudioStream" uid="uid://ffajodasi758" path="res://assets/sounds/shot.wav" id="5_c8p47"]
-[ext_resource type="AudioStream" uid="uid://cgq463olo12mk" path="res://assets/sounds/jump.wav" id="7_22fu1"]
+[ext_resource type="AudioStream" uid="uid://bx53mpf4gaymd" path="res://assets/sounds/jump.wav" id="7_22fu1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0wh87"]
 resource_local_to_scene = true
@@ -411,6 +411,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DoubleJumpPlayer/DoubleJumpNoise:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_hixx3"]
 resource_name = "double_jump"
@@ -421,6 +433,18 @@ tracks/0/path = NodePath("DoubleJumpParticles:emitting")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DoubleJumpPlayer/DoubleJumpNoise:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -514,6 +538,7 @@ libraries = {
 
 [node name="ShotNoise" type="AudioStreamPlayer" parent="ShotPlayer"]
 stream = ExtResource("5_c8p47")
+pitch_scale = 0.6
 bus = &"SFX"
 
 [node name="JumpPlayer" type="AnimationPlayer" parent="."]
@@ -523,6 +548,7 @@ libraries = {
 
 [node name="JumpNoise" type="AudioStreamPlayer" parent="JumpPlayer"]
 stream = ExtResource("7_22fu1")
+pitch_scale = 0.7
 bus = &"SFX"
 
 [node name="JumpTimer" type="Timer" parent="JumpPlayer"]
@@ -532,6 +558,10 @@ wait_time = 0.205
 libraries = {
 "": SubResource("AnimationLibrary_slwac")
 }
+
+[node name="DoubleJumpNoise" type="AudioStreamPlayer" parent="DoubleJumpPlayer"]
+stream = ExtResource("7_22fu1")
+bus = &"SFX"
 
 [node name="DoubleJumpTimer" type="Timer" parent="DoubleJumpPlayer"]
 wait_time = 0.205
