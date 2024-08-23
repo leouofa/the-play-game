@@ -17,7 +17,7 @@ func _on_change_level(level):
 
 
 func _on_intro():
-	play_file("time_for_adventure")
+	play_file("intro")
 
 func _on_main_menu():
 	play_file("time_for_adventure")
