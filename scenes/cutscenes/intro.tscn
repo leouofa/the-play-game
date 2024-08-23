@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://b5u3jwc7e46c2"]
+[gd_scene load_steps=56 format=3 uid="uid://b5u3jwc7e46c2"]
 
 [ext_resource type="Texture2D" uid="uid://daygdp8yh18na" path="res://assets/images/nebulas/Purple Nebula/Purple_Nebula_08-1024x1024.png" id="1_0k5a3"]
 [ext_resource type="Script" path="res://scripts/cutscenes/intro.gd" id="1_70hrv"]
@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://bdbmtp7bqru82" path="res://assets/sprites/agent.png" id="3_gmynx"]
 [ext_resource type="Texture2D" uid="uid://cxpvdtiivhxpu" path="res://assets/sprites/board.png" id="4_vbxum"]
 [ext_resource type="AudioStream" uid="uid://v81uch6kayxs" path="res://assets/voice/intro.mp3" id="5_m452a"]
+[ext_resource type="Texture2D" uid="uid://bsjmearg3tdlx" path="res://assets/sprites/athena.png" id="7_g87bh"]
+[ext_resource type="Texture2D" uid="uid://ccabdqnsdjya5" path="res://assets/sprites/posidon.png" id="8_57n61"]
+[ext_resource type="Texture2D" uid="uid://yfj3lfwe4570" path="res://assets/sprites/osiris.png" id="9_i3yig"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rsnnh"]
 atlas = ExtResource("4_vbxum")
@@ -242,6 +245,93 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_0lyqb"]
+atlas = ExtResource("7_g87bh")
+region = Rect2(0, 14, 64, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_32rml"]
+atlas = ExtResource("7_g87bh")
+region = Rect2(64, 14, 64, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sepsl"]
+atlas = ExtResource("7_g87bh")
+region = Rect2(128, 14, 64, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6a650"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0lyqb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_32rml")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sepsl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t157r"]
+atlas = ExtResource("8_57n61")
+region = Rect2(0, 11, 64, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wfu03"]
+atlas = ExtResource("8_57n61")
+region = Rect2(64, 11, 64, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f7tq8"]
+atlas = ExtResource("8_57n61")
+region = Rect2(128, 11, 64, 53)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kjqun"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t157r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wfu03")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f7tq8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ld1y"]
+atlas = ExtResource("9_i3yig")
+region = Rect2(0, 13, 64, 51)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p1dae"]
+atlas = ExtResource("9_i3yig")
+region = Rect2(64, 13, 64, 51)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_63eqp"]
+atlas = ExtResource("9_i3yig")
+region = Rect2(128, 13, 64, 51)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_662ig"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ld1y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p1dae")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_63eqp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="Animation" id="Animation_8epgh"]
 length = 0.001
 tracks/0/type = "bezier"
@@ -355,7 +445,7 @@ tracks/4/path = NodePath("Macron1:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0.1, 12.8, 36.4, 39.4),
+"times": PackedFloat32Array(0.1, 12.8, 35.4, 38.4),
 "transitions": PackedFloat32Array(1, 0.378929, 0.378929, 1),
 "update": 0,
 "values": [Vector2(164, 800), Vector2(164, 514.25), Vector2(164, 514.25), Vector2(164, -250)]
@@ -367,7 +457,7 @@ tracks/5/path = NodePath("Macron1")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(32.7, 36.6),
+"times": PackedFloat32Array(31.7, 35.6),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [&"default", 1.0, false],
@@ -462,10 +552,10 @@ tracks/12/path = NodePath("Macron1:modulate")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
-"times": PackedFloat32Array(32, 32.1),
-"transitions": PackedFloat32Array(1, 0.287174),
+"times": PackedFloat32Array(30, 31, 31.1, 31.2, 31.3, 31.4),
+"transitions": PackedFloat32Array(1, 0.287174, 1, 0.287174, 0.287174, 0.287174),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(0.999981, 0.209038, 0.399304, 1)]
+"values": [Color(1, 1, 1, 1), Color(0.999981, 0.209038, 0.399304, 1), Color(1, 1, 1, 1), Color(0.999981, 0.209038, 0.399304, 1), Color(1, 1, 1, 1), Color(0.999981, 0.209038, 0.399304, 1)]
 }
 tracks/13/type = "value"
 tracks/13/imported = false
@@ -478,6 +568,54 @@ tracks/13/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("RichTextLabel:theme_override_colors/default_color")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 1.1, 2.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Athena:modulate")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(38.5, 40.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Poseidon:modulate")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(42.7, 45.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("Osiris:modulate")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(50.3, 52.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hdmjd"]
@@ -501,6 +639,7 @@ offset_top = 648.0
 offset_right = 806.0
 offset_bottom = 1491.98
 size_flags_horizontal = 3
+theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 20
 text = "In a prehistoric world, where ancient landscapes blend with futuristic technology, a robot named Macron lives in hiding from humanity. 
@@ -515,24 +654,45 @@ Macron's ultimate goal is to reach heaven and lodge a complaint to God Osiris, t
 "
 
 [node name="Board" type="AnimatedSprite2D" parent="."]
-position = Vector2(895, 750)
+position = Vector2(1239, 616)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_men37")
 animation = &"skate"
 
 [node name="Agent" type="AnimatedSprite2D" parent="."]
-position = Vector2(1214, 554)
+position = Vector2(1245, 529)
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_cedh1")
 animation = &"idle"
 autoplay = "run"
-flip_h = true
 
 [node name="Macron1" type="AnimatedSprite2D" parent="."]
+modulate = Color(0.999981, 0.209038, 0.399304, 1)
 texture_filter = 5
 position = Vector2(164, 514.25)
 scale = Vector2(8.51562, 8.51562)
 sprite_frames = SubResource("SpriteFrames_8lltx")
+
+[node name="Athena" type="AnimatedSprite2D" parent="."]
+position = Vector2(169, 498)
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_6a650")
+autoplay = "default"
+frame_progress = 0.531228
+
+[node name="Poseidon" type="AnimatedSprite2D" parent="."]
+position = Vector2(998, 489)
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_kjqun")
+autoplay = "default"
+frame_progress = 0.360568
+
+[node name="Osiris" type="AnimatedSprite2D" parent="."]
+position = Vector2(588, 446)
+scale = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_662ig")
+autoplay = "default"
+frame_progress = 0.887995
 
 [node name="IntroPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_m452a")
