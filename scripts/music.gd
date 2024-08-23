@@ -7,6 +7,7 @@ var new_stream: AudioStream
 var last_level: int = -1  # Initialize to a value that cannot be a valid level
 
 signal change_level(level)
+signal intro
 signal main_menu
 
 func _on_change_level(level):
@@ -14,6 +15,9 @@ func _on_change_level(level):
 		play_file("level" + str(level))
 		last_level = level  # Update the last level to the current level
 
+
+func _on_intro():
+	play_file("intro")
 
 func _on_main_menu():
 	play_file("time_for_adventure")

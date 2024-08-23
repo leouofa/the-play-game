@@ -12,4 +12,5 @@ stream = ExtResource("1_uuorw")
 autoplay = true
 
 [connection signal="change_level" from="." to="." method="_on_change_level"]
+[connection signal="intro" from="." to="." method="_on_intro"]
 [connection signal="main_menu" from="." to="." method="_on_main_menu"]

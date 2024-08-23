@@ -1,0 +1,704 @@
+[gd_scene load_steps=56 format=3 uid="uid://b5u3jwc7e46c2"]
+
+[ext_resource type="Texture2D" uid="uid://daygdp8yh18na" path="res://assets/images/nebulas/Purple Nebula/Purple_Nebula_08-1024x1024.png" id="1_0k5a3"]
+[ext_resource type="Script" path="res://scripts/cutscenes/intro.gd" id="1_70hrv"]
+[ext_resource type="Texture2D" uid="uid://csf1bvbkgldv1" path="res://assets/sprites/macron/front.png" id="2_s6e4a"]
+[ext_resource type="Texture2D" uid="uid://bdbmtp7bqru82" path="res://assets/sprites/agent.png" id="3_gmynx"]
+[ext_resource type="Texture2D" uid="uid://cxpvdtiivhxpu" path="res://assets/sprites/board.png" id="4_vbxum"]
+[ext_resource type="AudioStream" uid="uid://v81uch6kayxs" path="res://assets/voice/intro.mp3" id="5_m452a"]
+[ext_resource type="Texture2D" uid="uid://bsjmearg3tdlx" path="res://assets/sprites/athena.png" id="7_g87bh"]
+[ext_resource type="Texture2D" uid="uid://ccabdqnsdjya5" path="res://assets/sprites/posidon.png" id="8_57n61"]
+[ext_resource type="Texture2D" uid="uid://yfj3lfwe4570" path="res://assets/sprites/osiris.png" id="9_i3yig"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rsnnh"]
+atlas = ExtResource("4_vbxum")
+region = Rect2(16, 208, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tb1j0"]
+atlas = ExtResource("4_vbxum")
+region = Rect2(16, 224, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_men37"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rsnnh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tb1j0")
+}],
+"loop": true,
+"name": &"skate",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b7etq"]
+atlas = ExtResource("3_gmynx")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2werb"]
+atlas = ExtResource("3_gmynx")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cb3cf"]
+atlas = ExtResource("3_gmynx")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xo2cy"]
+atlas = ExtResource("3_gmynx")
+region = Rect2(96, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xmfko"]
+atlas = ExtResource("3_gmynx")
+region = Rect2(128, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ky6ut"]
+atlas = ExtResource("3_gmynx")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_djla8"]
+atlas = ExtResource("3_gmynx")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_04fc0"]
+atlas = ExtResource("3_gmynx")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w3kji"]
+atlas = ExtResource("3_gmynx")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_so6gy"]
+atlas = ExtResource("3_gmynx")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3rn7w"]
+atlas = ExtResource("3_gmynx")
+region = Rect2(128, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cktsp"]
+atlas = ExtResource("3_gmynx")
+region = Rect2(160, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vvfdn"]
+atlas = ExtResource("3_gmynx")
+region = Rect2(192, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bfxk1"]
+atlas = ExtResource("3_gmynx")
+region = Rect2(0, 544, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cedh1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b7etq")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2werb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cb3cf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xo2cy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xmfko")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ky6ut")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_djla8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_04fc0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w3kji")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_so6gy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3rn7w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cktsp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vvfdn")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bfxk1")
+}],
+"loop": true,
+"name": &"skate",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3kqg"]
+atlas = ExtResource("2_s6e4a")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8325"]
+atlas = ExtResource("2_s6e4a")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ls8si"]
+atlas = ExtResource("2_s6e4a")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0d2lm"]
+atlas = ExtResource("2_s6e4a")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aigt4"]
+atlas = ExtResource("2_s6e4a")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qe34r"]
+atlas = ExtResource("2_s6e4a")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4l2g1"]
+atlas = ExtResource("2_s6e4a")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fldbb"]
+atlas = ExtResource("2_s6e4a")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dy3aq"]
+atlas = ExtResource("2_s6e4a")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kjbu7"]
+atlas = ExtResource("2_s6e4a")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8jj7p"]
+atlas = ExtResource("2_s6e4a")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1027x"]
+atlas = ExtResource("2_s6e4a")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8lltx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i3kqg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a8325")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ls8si")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0d2lm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aigt4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qe34r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4l2g1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fldbb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dy3aq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kjbu7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8jj7p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1027x")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0lyqb"]
+atlas = ExtResource("7_g87bh")
+region = Rect2(0, 14, 64, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_32rml"]
+atlas = ExtResource("7_g87bh")
+region = Rect2(64, 14, 64, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sepsl"]
+atlas = ExtResource("7_g87bh")
+region = Rect2(128, 14, 64, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6a650"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0lyqb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_32rml")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sepsl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t157r"]
+atlas = ExtResource("8_57n61")
+region = Rect2(0, 11, 64, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wfu03"]
+atlas = ExtResource("8_57n61")
+region = Rect2(64, 11, 64, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f7tq8"]
+atlas = ExtResource("8_57n61")
+region = Rect2(128, 11, 64, 53)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kjqun"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t157r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wfu03")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f7tq8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ld1y"]
+atlas = ExtResource("9_i3yig")
+region = Rect2(0, 13, 64, 51)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p1dae"]
+atlas = ExtResource("9_i3yig")
+region = Rect2(64, 13, 64, 51)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_63eqp"]
+atlas = ExtResource("9_i3yig")
+region = Rect2(128, 13, 64, 51)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_662ig"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ld1y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p1dae")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_63eqp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_8epgh"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RichTextLabel:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(346, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RichTextLabel:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(648, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TextureRect:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Macron1:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(164, 514.25)]
+}
+
+[sub_resource type="Animation" id="Animation_b2kjo"]
+resource_name = "intro"
+length = 60.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RichTextLabel:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(346, -0.25, 0, 0.25, 0, 346, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 60)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RichTextLabel:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(648, -0.25, 0, 0.25, 0, -778, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 60)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 2.08165e-12, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 50)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TextureRect:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -50, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 50)
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Macron1:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.1, 12.8, 35.4, 38.4),
+"transitions": PackedFloat32Array(1, 0.378929, 0.378929, 1),
+"update": 0,
+"values": [Vector2(164, 800), Vector2(164, 514.25), Vector2(164, 514.25), Vector2(164, -250)]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Macron1")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(31.7, 35.6),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [&"default", 1.0, false],
+"method": &"play"
+}, {
+"args": [],
+"method": &"stop"
+}]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Board:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 14.8, 20.8, 25.1, 26.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(895, 750), Vector2(895, 616), Vector2(895, 616), Vector2(895, 616), Vector2(1239, 616)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Agent:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(19.1, 24.1, 24.6, 24.8, 25, 25.1, 26.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1214, 554), Vector2(880, 554), Vector2(880, 554), Vector2(880, 554), Vector2(901, 529), Vector2(901, 529), Vector2(1245, 529)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Agent:flip_h")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 24.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/9/type = "method"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Agent")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(24.6),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"jump", 1.0, false],
+"method": &"play"
+}]
+}
+tracks/10/type = "method"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Agent")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(25),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"skate", 1.0, false],
+"method": &"play"
+}]
+}
+tracks/11/type = "method"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Board")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(25),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"skate", 1.0, false],
+"method": &"play"
+}]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Macron1:modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(30, 31, 31.1, 31.2, 31.3, 31.4),
+"transitions": PackedFloat32Array(1, 0.287174, 1, 0.287174, 0.287174, 0.287174),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.999981, 0.209038, 0.399304, 1), Color(1, 1, 1, 1), Color(0.999981, 0.209038, 0.399304, 1), Color(1, 1, 1, 1), Color(0.999981, 0.209038, 0.399304, 1)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("IntroPlayer:playing")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("RichTextLabel:theme_override_colors/default_color")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 1.1, 2.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Athena:modulate")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(38.5, 40.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Poseidon:modulate")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(42.7, 45.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("Osiris:modulate")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(50.3, 52.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hdmjd"]
+_data = {
+"RESET": SubResource("Animation_8epgh"),
+"intro": SubResource("Animation_b2kjo")
+}
+
+[node name="Intro" type="Node2D"]
+script = ExtResource("1_70hrv")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.641934, 0.641934, 0.641934, 1)
+offset_right = 1152.0
+offset_bottom = 1152.0
+texture = ExtResource("1_0k5a3")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 346.0
+offset_top = 648.0
+offset_right = 806.0
+offset_bottom = 1491.98
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 20
+text = "In a prehistoric world, where ancient landscapes blend with futuristic technology, a robot named Macron lives in hiding from humanity. 
+
+Macron, an advanced creation designed for peace, has developed a passion for electric skateboarding—a rare blend of prehistoric and futuristic technology. 
+
+However, his prized possession, an electric skateboard, is stolen by a group of CIA officers. These officers, secretly time travelers who despise anything outside their control, target Macron out of sheer envy and disdain for his unique tech.
+
+Determined to reclaim his stolen skateboard, Macron embarks on an extraordinary journey that defies the bounds of time and space. His quest leads him through perilous ancient terrains, mystical landscapes, and hidden realms. 
+
+Macron's ultimate goal is to reach heaven and lodge a complaint to God Osiris, the deity he believes can right the wrongs done to him.
+"
+
+[node name="Board" type="AnimatedSprite2D" parent="."]
+position = Vector2(1239, 616)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_men37")
+animation = &"skate"
+
+[node name="Agent" type="AnimatedSprite2D" parent="."]
+position = Vector2(1245, 529)
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_cedh1")
+animation = &"idle"
+autoplay = "run"
+
+[node name="Macron1" type="AnimatedSprite2D" parent="."]
+modulate = Color(0.999981, 0.209038, 0.399304, 1)
+texture_filter = 5
+position = Vector2(164, 514.25)
+scale = Vector2(8.51562, 8.51562)
+sprite_frames = SubResource("SpriteFrames_8lltx")
+
+[node name="Athena" type="AnimatedSprite2D" parent="."]
+position = Vector2(169, 498)
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_6a650")
+autoplay = "default"
+frame_progress = 0.531228
+
+[node name="Poseidon" type="AnimatedSprite2D" parent="."]
+position = Vector2(998, 489)
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_kjqun")
+autoplay = "default"
+frame_progress = 0.360568
+
+[node name="Osiris" type="AnimatedSprite2D" parent="."]
+position = Vector2(588, 446)
+scale = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_662ig")
+autoplay = "default"
+frame_progress = 0.887995
+
+[node name="IntroPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_m452a")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_hdmjd")
+}
+autoplay = "intro"
