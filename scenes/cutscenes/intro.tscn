@@ -23,7 +23,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_tb1j0")
 }],
 "loop": true,
-"name": &"default",
+"name": &"skate",
 "speed": 5.0
 }]
 
@@ -341,7 +341,7 @@ tracks/4/path = NodePath("Macron1:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0.1, 10, 12, 15),
+"times": PackedFloat32Array(5.6, 15.5, 17.5, 20.5),
 "transitions": PackedFloat32Array(1, 0.378929, 0.378929, 1),
 "update": 0,
 "values": [Vector2(164, 800), Vector2(164, 514.25), Vector2(164, 514.25), Vector2(164, -250)]
@@ -353,7 +353,7 @@ tracks/5/path = NodePath("Macron1")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(8.3, 12.2),
+"times": PackedFloat32Array(13.8, 17.7),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [&"default", 1.0, false],
@@ -370,10 +370,10 @@ tracks/6/path = NodePath("Board:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 9.8),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 1.7, 7.7, 7.8, 8.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(895, 750), Vector2(895, 616)]
+"values": [Vector2(895, 750), Vector2(895, 616), Vector2(895, 616), Vector2(895, 616), Vector2(1239, 616)]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
@@ -382,10 +382,10 @@ tracks/7/path = NodePath("Agent:position")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(9.6, 14.9, 15.7, 15.9),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(1.5, 6.8, 7.3, 7.5, 7.7, 7.8, 8.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(1214, 554), Vector2(880, 554), Vector2(880, 554), Vector2(901, 529)]
+"values": [Vector2(1214, 554), Vector2(880, 554), Vector2(880, 554), Vector2(880, 554), Vector2(901, 529), Vector2(901, 529), Vector2(1245, 529)]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
@@ -394,7 +394,7 @@ tracks/8/path = NodePath("Agent:flip_h")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0, 15.7),
+"times": PackedFloat32Array(0, 7.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -406,7 +406,7 @@ tracks/9/path = NodePath("Agent")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(15.5),
+"times": PackedFloat32Array(7.3),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [&"jump", 1.0, false],
@@ -420,7 +420,7 @@ tracks/10/path = NodePath("Agent")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(15.9),
+"times": PackedFloat32Array(7.7),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [&"skate", 1.0, false],
@@ -465,13 +465,15 @@ Macron's ultimate goal is to reach heaven and lodge a complaint to God Osiris, t
 position = Vector2(895, 616)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_men37")
+animation = &"skate"
 
 [node name="Agent" type="AnimatedSprite2D" parent="."]
-position = Vector2(901, 529)
+position = Vector2(880, 554)
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_cedh1")
 animation = &"skate"
 autoplay = "run"
+flip_h = true
 
 [node name="Macron1" type="AnimatedSprite2D" parent="."]
 texture_filter = 5
