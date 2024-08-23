@@ -1,9 +1,11 @@
-[gd_scene load_steps=39 format=3 uid="uid://b5u3jwc7e46c2"]
+[gd_scene load_steps=41 format=3 uid="uid://b5u3jwc7e46c2"]
 
 [ext_resource type="Texture2D" uid="uid://daygdp8yh18na" path="res://assets/images/nebulas/Purple Nebula/Purple_Nebula_08-1024x1024.png" id="1_0k5a3"]
+[ext_resource type="Script" path="res://scripts/cutscenes/intro.gd" id="1_70hrv"]
 [ext_resource type="Texture2D" uid="uid://csf1bvbkgldv1" path="res://assets/sprites/macron/front.png" id="2_s6e4a"]
 [ext_resource type="Texture2D" uid="uid://bdbmtp7bqru82" path="res://assets/sprites/agent.png" id="3_gmynx"]
 [ext_resource type="Texture2D" uid="uid://cxpvdtiivhxpu" path="res://assets/sprites/board.png" id="4_vbxum"]
+[ext_resource type="AudioStream" uid="uid://v81uch6kayxs" path="res://assets/voice/intro.mp3" id="5_m452a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rsnnh"]
 atlas = ExtResource("4_vbxum")
@@ -465,6 +467,18 @@ tracks/12/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(0.999981, 0.209038, 0.399304, 1)]
 }
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("IntroPlayer:playing")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hdmjd"]
 _data = {
@@ -472,7 +486,8 @@ _data = {
 "intro": SubResource("Animation_b2kjo")
 }
 
-[node name="Node2D" type="Node2D"]
+[node name="Intro" type="Node2D"]
+script = ExtResource("1_70hrv")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 modulate = Color(0.641934, 0.641934, 0.641934, 1)
@@ -500,7 +515,7 @@ Macron's ultimate goal is to reach heaven and lodge a complaint to God Osiris, t
 "
 
 [node name="Board" type="AnimatedSprite2D" parent="."]
-position = Vector2(895, 750)
+position = Vector2(895, 713.784)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_men37")
 animation = &"skate"
@@ -518,6 +533,9 @@ texture_filter = 5
 position = Vector2(164, 514.25)
 scale = Vector2(8.51562, 8.51562)
 sprite_frames = SubResource("SpriteFrames_8lltx")
+
+[node name="IntroPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_m452a")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
