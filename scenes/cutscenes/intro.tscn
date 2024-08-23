@@ -303,7 +303,7 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id="Animation_b2kjo"]
 resource_name = "intro"
-length = 50.0
+length = 60.0
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -313,7 +313,7 @@ tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0, 0),
 "points": PackedFloat32Array(346, -0.25, 0, 0.25, 0, 346, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 50)
+"times": PackedFloat32Array(0, 60)
 }
 tracks/1/type = "bezier"
 tracks/1/imported = false
@@ -324,7 +324,7 @@ tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0, 0),
 "points": PackedFloat32Array(648, -0.25, 0, 0.25, 0, -778, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 50)
+"times": PackedFloat32Array(0, 60)
 }
 tracks/2/type = "bezier"
 tracks/2/imported = false
@@ -355,7 +355,7 @@ tracks/4/path = NodePath("Macron1:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0.1, 12.8, 32.4, 35.4),
+"times": PackedFloat32Array(0.1, 12.8, 36.4, 39.4),
 "transitions": PackedFloat32Array(1, 0.378929, 0.378929, 1),
 "update": 0,
 "values": [Vector2(164, 800), Vector2(164, 514.25), Vector2(164, 514.25), Vector2(164, -250)]
@@ -367,7 +367,7 @@ tracks/5/path = NodePath("Macron1")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(28.7, 32.6),
+"times": PackedFloat32Array(32.7, 36.6),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [&"default", 1.0, false],
@@ -462,7 +462,7 @@ tracks/12/path = NodePath("Macron1:modulate")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
-"times": PackedFloat32Array(22.6, 23),
+"times": PackedFloat32Array(32, 32.1),
 "transitions": PackedFloat32Array(1, 0.287174),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(0.999981, 0.209038, 0.399304, 1)]
