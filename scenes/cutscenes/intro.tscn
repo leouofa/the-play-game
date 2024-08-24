@@ -564,10 +564,10 @@ tracks/13/path = NodePath("IntroPlayer:playing")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
-"times": PackedFloat32Array(1),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.1, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [true]
+"values": [false, true]
 }
 tracks/14/type = "value"
 tracks/14/imported = false
@@ -588,7 +588,7 @@ tracks/15/path = NodePath("Athena:modulate")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
-"times": PackedFloat32Array(38.5, 40.5),
+"times": PackedFloat32Array(36.7, 38.7),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -600,7 +600,7 @@ tracks/16/path = NodePath("Poseidon:modulate")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
-"times": PackedFloat32Array(42.7, 45.1),
+"times": PackedFloat32Array(40.9, 43.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -616,6 +616,20 @@ tracks/17/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/18/type = "method"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath(".")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(60),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"end_intro"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hdmjd"]
@@ -639,7 +653,7 @@ offset_top = 648.0
 offset_right = 806.0
 offset_bottom = 1491.98
 size_flags_horizontal = 3
-theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/default_color = Color(1, 1, 1, 0)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 20
 text = "In a prehistoric world, where ancient landscapes blend with futuristic technology, a robot named Macron lives in hiding from humanity. 
@@ -654,26 +668,27 @@ Macron's ultimate goal is to reach heaven and lodge a complaint to God Osiris, t
 "
 
 [node name="Board" type="AnimatedSprite2D" parent="."]
-position = Vector2(1239, 616)
+position = Vector2(895, 750)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_men37")
 animation = &"skate"
 
 [node name="Agent" type="AnimatedSprite2D" parent="."]
-position = Vector2(1245, 529)
+position = Vector2(1214, 554)
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_cedh1")
 animation = &"idle"
 autoplay = "run"
+flip_h = true
 
 [node name="Macron1" type="AnimatedSprite2D" parent="."]
-modulate = Color(0.999981, 0.209038, 0.399304, 1)
 texture_filter = 5
 position = Vector2(164, 514.25)
 scale = Vector2(8.51562, 8.51562)
 sprite_frames = SubResource("SpriteFrames_8lltx")
 
 [node name="Athena" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
 position = Vector2(169, 498)
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_6a650")
@@ -681,6 +696,7 @@ autoplay = "default"
 frame_progress = 0.531228
 
 [node name="Poseidon" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
 position = Vector2(998, 489)
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_kjqun")
@@ -688,6 +704,7 @@ autoplay = "default"
 frame_progress = 0.360568
 
 [node name="Osiris" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
 position = Vector2(588, 446)
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_662ig")
@@ -696,6 +713,7 @@ frame_progress = 0.887995
 
 [node name="IntroPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_m452a")
+volume_db = 1.415
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
