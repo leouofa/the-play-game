@@ -13,7 +13,7 @@ void fragment() {
 	float value = (1.0 - SCREEN_UV.x) * (1.0 - wave_size - wave_foam_size);
 	float alpha = 1.0;
 	vec3 color = COLOR.rgb + vec3(0.0, value, 0.0) / 1.0;
-	
+
 	float wave_cutoff_percent = (sin(SCREEN_UV.y / wave_frequency + TIME * wave_speed) + 1.0) / 2.0;
 	float wave_cutoff_value = cutoff - wave_cutoff_percent * wave_size;
 
@@ -24,6 +24,6 @@ void fragment() {
 			alpha = 0.0;
 		}
 	}
-	
+
 	COLOR = vec4(color, alpha);
 }
