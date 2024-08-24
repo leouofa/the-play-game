@@ -22,7 +22,7 @@ func _on_back_button_pressed():
 
 func _on_new_game_button_pressed():
 	save(Autoload.slot)
-	goto_level('1')
+	goto_cut_scene("intro")
 
 func save(save_slot):
 	var file_path = SAVE_PATH + str(save_slot) + ".save"
