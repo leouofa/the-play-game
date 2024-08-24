@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
-var SPEED = 130.0
-var REGULAR_SPEED = 130
-var DASH_SPEED = 300
+var SPEED = 90.0
+var REGULAR_SPEED = 90
+var DASH_SPEED = 200
 
 const BASE_JUMP_VELOCITY = -300.0
 var GUN_COOLDOWN_TIMEOUT = 0.3

@@ -14,6 +14,7 @@ config/name="play"
 config/description="Splash Platformer"
 run/main_scene="res://scenes/ui/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
+boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/show_image=false
 boot_splash/image="res://assets/images/splash.png"
 config/icon="res://assets/images/splash.png"
@@ -27,7 +28,6 @@ Autoload="*res://scenes/autoload.tscn"
 [display]
 
 window/stretch/mode="viewport"
-window/bg_color=Color(0.457857, 0.0550791, 0.227589, 1)
 window/image="res://images/splash.png"
 window/show_image=true
 
@@ -81,4 +81,5 @@ esc={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+anti_aliasing/quality/msaa_2d=3
 viewport/hdr_2d=true
