@@ -1,18 +1,19 @@
-[gd_scene load_steps=24 format=4 uid="uid://vm4ych1opvcy"]
+[gd_scene load_steps=25 format=4 uid="uid://c4wxmdrht1b6n"]
 
-[ext_resource type="PackedScene" uid="uid://bev6by4am3u23" path="res://scenes/game_manager.tscn" id="2_b026e"]
-[ext_resource type="Texture2D" uid="uid://c605lteint8st" path="res://assets/sprites/world_tileset.png" id="3_2uxdo"]
-[ext_resource type="PackedScene" uid="uid://dj7igolwo2wmg" path="res://scenes/ui/pause_menu.tscn" id="4_eenkv"]
-[ext_resource type="Texture2D" uid="uid://b444hrclvhfdy" path="res://assets/images/parallax/dusk/sky.png" id="5_nmkg3"]
-[ext_resource type="Texture2D" uid="uid://0akocup4s583" path="res://assets/images/parallax/dusk/far-clouds.png" id="6_wo5sn"]
-[ext_resource type="Texture2D" uid="uid://cjftpx733pf5s" path="res://assets/images/parallax/dusk/near-clouds.png" id="7_p7a1v"]
-[ext_resource type="Texture2D" uid="uid://c0rnq2i52cmdc" path="res://assets/images/parallax/dusk/far-mountains.png" id="8_5b54u"]
-[ext_resource type="Texture2D" uid="uid://v8ay8jdwfnrv" path="res://assets/images/parallax/dusk/mountains.png" id="9_2ksn6"]
-[ext_resource type="Texture2D" uid="uid://diiomh72jf8jm" path="res://assets/images/parallax/dusk/trees.png" id="10_rb6lu"]
-[ext_resource type="PackedScene" uid="uid://y7u5evu33077" path="res://scenes/player.tscn" id="11_yv0yi"]
-[ext_resource type="PackedScene" uid="uid://jb7xpxibx6hp" path="res://scenes/killzone.tscn" id="12_2fqr4"]
-[ext_resource type="PackedScene" uid="uid://cxun1bjt5g7w" path="res://scenes/agent.tscn" id="14_ltt3n"]
-[ext_resource type="PackedScene" uid="uid://c6gqsq7bpg3hp" path="res://scenes/next_level.tscn" id="15_37wyg"]
+[ext_resource type="PackedScene" uid="uid://bev6by4am3u23" path="res://scenes/game_manager.tscn" id="1_wnyea"]
+[ext_resource type="Texture2D" uid="uid://c605lteint8st" path="res://assets/sprites/world_tileset.png" id="2_e036i"]
+[ext_resource type="PackedScene" uid="uid://dj7igolwo2wmg" path="res://scenes/ui/pause_menu.tscn" id="3_mkv56"]
+[ext_resource type="Texture2D" uid="uid://b444hrclvhfdy" path="res://assets/images/parallax/dusk/sky.png" id="4_nev7m"]
+[ext_resource type="Texture2D" uid="uid://0akocup4s583" path="res://assets/images/parallax/dusk/far-clouds.png" id="5_q0x1x"]
+[ext_resource type="Texture2D" uid="uid://cjftpx733pf5s" path="res://assets/images/parallax/dusk/near-clouds.png" id="6_so1rx"]
+[ext_resource type="Texture2D" uid="uid://c0rnq2i52cmdc" path="res://assets/images/parallax/dusk/far-mountains.png" id="7_umnnr"]
+[ext_resource type="Texture2D" uid="uid://v8ay8jdwfnrv" path="res://assets/images/parallax/dusk/mountains.png" id="8_v2lfr"]
+[ext_resource type="Texture2D" uid="uid://diiomh72jf8jm" path="res://assets/images/parallax/dusk/trees.png" id="9_wv7cd"]
+[ext_resource type="PackedScene" uid="uid://y7u5evu33077" path="res://scenes/player.tscn" id="10_8fayk"]
+[ext_resource type="PackedScene" uid="uid://jb7xpxibx6hp" path="res://scenes/killzone.tscn" id="11_1itth"]
+[ext_resource type="PackedScene" uid="uid://g7cqyt56f0sk" path="res://scenes/coin.tscn" id="12_isv5x"]
+[ext_resource type="PackedScene" uid="uid://cxun1bjt5g7w" path="res://scenes/agent.tscn" id="13_gigxn"]
+[ext_resource type="PackedScene" uid="uid://c6gqsq7bpg3hp" path="res://scenes/next_level.tscn" id="14_te55t"]
 
 [sub_resource type="Gradient" id="Gradient_tpp8t"]
 
@@ -110,7 +111,7 @@ _data = {
 }
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tqh17"]
-texture = ExtResource("3_2uxdo")
+texture = ExtResource("2_e036i")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -301,7 +302,7 @@ libraries = {
 }
 autoplay = "world"
 
-[node name="GameManager" parent="." instance=ExtResource("2_b026e")]
+[node name="GameManager" parent="." instance=ExtResource("1_wnyea")]
 unique_name_in_owner = true
 
 [node name="TileMaps" type="Node2D" parent="."]
@@ -310,11 +311,12 @@ position = Vector2(0, 9)
 [node name="Background" type="TileMapLayer" parent="TileMaps"]
 z_index = -1
 use_parent_material = true
+tile_map_data = PackedByteArray("AAD//wMAAAADAAgAAAD//wQAAAADAAcAAAD//wEAAAACAAQAAAADAAQAAAABAAQAAQD+/wQAAAABAAUAAQA=")
 tile_set = SubResource("TileSet_4oylx")
 
 [node name="Mid" type="TileMapLayer" parent="TileMaps"]
 use_parent_material = true
-tile_map_data = PackedByteArray("AAD9//z/AAAGAAEAAAD9//3/AAAGAAEAAAD9//7/AAAGAAEAAAD9////AAAGAAEAAAD9/wAAAAAGAAEAAAD9/wEAAAAGAAEAAAD9/wIAAAAGAAEAAAD9/wMAAAAGAAEAAAD9/wQAAAAGAAEAAAD9/wUAAAAAAAAAAAD9/wYAAAAAAAEAAAD+/wUAAAAAAAAAAAD+/wYAAAABAAAAAAD//wUAAAAAAAAAAAD//wYAAAABAAEAAAAAAAUAAAAAAAAAAAAAAAYAAAAAAAEAAAABAAUAAAAAAAAAAAABAAYAAAABAAAAAAACAAUAAAAAAAAAAAACAAYAAAAAAAEAAAADAAUAAAAAAAAAAAADAAYAAAAAAAEAAAAgAAUAAAAAAAAAAAAgAAYAAAABAAEAAAAhAAUAAAAAAAAAAAAhAAYAAAABAAAAAAAiAAUAAAAAAAAAAAAiAAYAAAAAAAEAAAAjAAUAAAAAAAAAAAAjAAYAAAAAAAEAAAAkAAUAAAAAAAAAAAAkAAYAAAABAAAAAAAlAAUAAAAAAAAAAAAlAAYAAAAAAAEAAAAmAAUAAAAAAAAAAAAmAAYAAAAAAAEAAAAnAAUAAAAAAAAAAAAnAAYAAAABAAEAAAAoAAUAAAAAAAAAAAAoAAYAAAAAAAEAAAApAAUAAAAAAAAAAAApAAYAAAABAAAAAAAqAAQAAAAIAAAAAAAqAAUAAAAAAAAAAAAqAAYAAAAAAAEAAAAEAAUAAAAAAAAAAAAFAAUAAAAAAAAAAAAGAAUAAAAAAAAAAAAHAAUAAAAAAAAAAAAIAAUAAAAAAAAAAAAJAAUAAAAAAAAAAAAKAAUAAAAAAAAAAAALAAUAAAAAAAAAAAAMAAUAAAAAAAAAAAANAAUAAAAAAAAAAAAOAAUAAAAAAAAAAAAPAAUAAAAAAAAAAAAQAAUAAAAAAAAAAAARAAUAAAAAAAAAAAASAAUAAAAAAAAAAAATAAUAAAAAAAAAAAAUAAUAAAAAAAAAAAAVAAUAAAAAAAAAAAAWAAUAAAAAAAAAAAAXAAUAAAAAAAAAAAAYAAUAAAAAAAAAAAAZAAUAAAAAAAAAAAAaAAUAAAAAAAAAAAAbAAUAAAAAAAAAAAAcAAUAAAAAAAAAAAAdAAUAAAAAAAAAAAAeAAUAAAAAAAAAAAAfAAUAAAAAAAAAAAAEAAYAAAAAAAEAAAAFAAYAAAAAAAEAAAAGAAYAAAAAAAEAAAAHAAYAAAAAAAEAAAAIAAYAAAAAAAEAAAAJAAYAAAAAAAEAAAAKAAYAAAAAAAEAAAALAAYAAAAAAAEAAAAMAAYAAAAAAAEAAAANAAYAAAAAAAEAAAAOAAYAAAAAAAEAAAAPAAYAAAAAAAEAAAAQAAYAAAAAAAEAAAARAAYAAAAAAAEAAAASAAYAAAAAAAEAAAATAAYAAAAAAAEAAAAUAAYAAAAAAAEAAAAVAAYAAAAAAAEAAAAWAAYAAAAAAAEAAAAXAAYAAAAAAAEAAAAYAAYAAAAAAAEAAAAZAAYAAAAAAAEAAAAaAAYAAAAAAAEAAAAbAAYAAAAAAAEAAAAcAAYAAAAAAAEAAAAdAAYAAAAAAAEAAAAeAAYAAAAAAAEAAAAfAAYAAAAAAAEAAAAqAAMAAAAIAAAAAAAqAAIAAAAIAAAAAAAqAAEAAAAIAAAAAAAqAAAAAAAIAAAAAAAqAP//AAAIAAAAAAAqAP7/AAAIAAAAAAAqAP3/AAAIAAAAAAAqAPz/AAAIAAAAAAAqAPv/AAAIAAAAAAAqAPr/AAAIAAAAAAAqAPn/AAAIAAAAAAAqAPj/AAAIAAAAAAAqAPf/AAAIAAAAAAAqAPb/AAAIAAAAAAD9//v/AAAIAAAAAAD9//r/AAAIAAAAAAD9//n/AAAIAAAAAAD9//j/AAAIAAAAAAD9//f/AAAIAAAAAAD9//b/AAAIAAAAAAA=")
+tile_map_data = PackedByteArray("AAD9//z/AAAGAAEAAAD9//3/AAAGAAEAAAD9//7/AAAGAAEAAAD9////AAAGAAEAAAD9/wAAAAAGAAEAAAD9/wEAAAAGAAEAAAD9/wIAAAAGAAEAAAD9/wMAAAAGAAEAAAD9/wQAAAAGAAEAAAD9/wUAAAAAAAAAAAD9/wYAAAAAAAEAAAD+/wUAAAAAAAAAAAD+/wYAAAABAAAAAAD//wUAAAAAAAAAAAD//wYAAAABAAEAAAAAAAUAAAAAAAAAAAAAAAYAAAAAAAEAAAABAAUAAAAAAAAAAAABAAYAAAABAAAAAAACAAUAAAAAAAAAAAACAAYAAAAAAAEAAAADAAUAAAAAAAAAAAADAAYAAAAAAAEAAAAEAAUAAAAJAAAAAAAFAAUAAAALAAAAAAAGAAUAAAAAAAAAAAAGAAYAAAABAAAAAAAHAAUAAAAAAAAAAAAHAAYAAAAAAAEAAAAJAAUAAAAGAAAAAAAJAAYAAAAGAAEAAAAKAAUAAAAGAAAAAAAKAAYAAAAGAAEAAAAMAAUAAAAGAAAAAAAMAAYAAAAGAAEAAAANAAUAAAAJAAAAAAAOAAUAAAAKAAAAAAAPAAUAAAALAAAAAAAQAAUAAAAGAAAAAAAQAAYAAAAGAAEAAAARAAUAAAAJAAEAAAASAAUAAAAKAAEAAAATAAUAAAALAAEAAAAUAAUAAAAJAAIAAAAVAAUAAAAKAAIAAAAWAAUAAAALAAIAAAAXAAUAAAAJAAEAAAAYAAUAAAAKAAEAAAAZAAUAAAALAAEAAAAaAAUAAAAJAAIAAAAbAAUAAAAKAAIAAAAcAAUAAAALAAIAAAAdAAUAAAAJAAAAAAAeAAUAAAAKAAAAAAAfAAUAAAALAAAAAAAgAAQAAAAAAAAAAAAgAAUAAAAAAAEAAAAgAAYAAAABAAEAAAAhAAUAAAAAAAEAAAAhAAYAAAABAAAAAAAiAAUAAAAAAAEAAAAiAAYAAAAAAAEAAAAjAAUAAAAAAAEAAAAjAAYAAAAAAAEAAAAkAAUAAAAAAAEAAAAkAAYAAAABAAAAAAAlAAUAAAAAAAEAAAAlAAYAAAAAAAEAAAAmAAUAAAAAAAEAAAAmAAYAAAAAAAEAAAAnAAUAAAAAAAEAAAAnAAYAAAABAAEAAAAoAAUAAAAAAAEAAAAoAAYAAAAAAAEAAAApAAUAAAAAAAEAAAApAAYAAAABAAAAAAAqAAQAAAAAAAAAAAAqAAUAAAAAAAEAAAAqAAYAAAAAAAEAAAAgAAMAAAAHAAQAAAA=")
 tile_set = SubResource("TileSet_4oylx")
 
 [node name="Front" type="TileMapLayer" parent="TileMaps"]
@@ -324,7 +326,7 @@ tile_set = SubResource("TileSet_4oylx")
 
 [node name="PauseLayer" type="CanvasLayer" parent="."]
 
-[node name="Pause Menu" parent="PauseLayer" instance=ExtResource("4_eenkv")]
+[node name="Pause Menu" parent="PauseLayer" instance=ExtResource("3_mkv56")]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -334,7 +336,7 @@ motion_scale = Vector2(2.08165e-12, 2.08165e-12)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Sky"]
 position = Vector2(2.08165e-12, 2.08165e-12)
-texture = ExtResource("5_nmkg3")
+texture = ExtResource("4_nev7m")
 centered = false
 
 [node name="FarClouds1" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -343,7 +345,7 @@ motion_mirroring = Vector2(128, 2.08165e-12)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/FarClouds1"]
 position = Vector2(2.08165e-12, 2.08165e-12)
-texture = ExtResource("6_wo5sn")
+texture = ExtResource("5_q0x1x")
 centered = false
 
 [node name="FarClouds2" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -352,7 +354,7 @@ motion_mirroring = Vector2(128, 2.08165e-12)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/FarClouds2"]
 position = Vector2(256, 2.08165e-12)
-texture = ExtResource("6_wo5sn")
+texture = ExtResource("5_q0x1x")
 centered = false
 
 [node name="NearClouds1" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -361,7 +363,7 @@ motion_mirroring = Vector2(144, 2.08165e-12)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/NearClouds1"]
 position = Vector2(2.08165e-12, 2.08165e-12)
-texture = ExtResource("7_p7a1v")
+texture = ExtResource("6_so1rx")
 centered = false
 
 [node name="NearClouds2" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -370,7 +372,7 @@ motion_mirroring = Vector2(144, 2.08165e-12)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/NearClouds2"]
 position = Vector2(144, 2.08165e-12)
-texture = ExtResource("7_p7a1v")
+texture = ExtResource("6_so1rx")
 centered = false
 
 [node name="FarMountains1" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -378,7 +380,7 @@ motion_scale = Vector2(0.7, 1)
 motion_mirroring = Vector2(160, 2.08165e-12)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/FarMountains1"]
-texture = ExtResource("8_5b54u")
+texture = ExtResource("7_umnnr")
 centered = false
 
 [node name="FarMountains2" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -387,7 +389,7 @@ motion_mirroring = Vector2(160, 2.08165e-12)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/FarMountains2"]
 position = Vector2(320, 2.08165e-12)
-texture = ExtResource("8_5b54u")
+texture = ExtResource("7_umnnr")
 centered = false
 
 [node name="NearMountains1" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -395,7 +397,7 @@ motion_scale = Vector2(0.8, 1)
 motion_mirroring = Vector2(320, 2.08165e-12)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/NearMountains1"]
-texture = ExtResource("9_2ksn6")
+texture = ExtResource("8_v2lfr")
 centered = false
 
 [node name="Trees1" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -403,7 +405,7 @@ motion_scale = Vector2(0.9, 1)
 motion_mirroring = Vector2(240, 2.08165e-12)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Trees1"]
-texture = ExtResource("10_rb6lu")
+texture = ExtResource("9_wv7cd")
 centered = false
 
 [node name="Trees2" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -412,10 +414,10 @@ motion_mirroring = Vector2(240, 2.08165e-12)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Trees2"]
 position = Vector2(480, 2.08165e-12)
-texture = ExtResource("10_rb6lu")
+texture = ExtResource("9_wv7cd")
 centered = false
 
-[node name="Player" parent="." instance=ExtResource("11_yv0yi")]
+[node name="Player" parent="." instance=ExtResource("10_8fayk")]
 position = Vector2(31, 4)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -426,19 +428,24 @@ limit_bottom = 0
 limit_smoothed = true
 position_smoothing_enabled = true
 
-[node name="Killzone" parent="." instance=ExtResource("12_2fqr4")]
+[node name="Killzone" parent="." instance=ExtResource("11_1itth")]
 position = Vector2(29, 23)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
 position = Vector2(0, 98)
 shape = SubResource("WorldBoundaryShape2D_ftjdq")
 
+[node name="Coins" type="Node" parent="."]
+
+[node name="Coin" parent="Coins" instance=ExtResource("12_isv5x")]
+position = Vector2(107, -46)
+
 [node name="Platforms" type="Node" parent="."]
 
 [node name="Enemies" type="Node" parent="."]
 
-[node name="Agent" parent="Enemies" instance=ExtResource("14_ltt3n")]
+[node name="Agent" parent="Enemies" instance=ExtResource("13_gigxn")]
 position = Vector2(601, -31)
 
-[node name="NextLevel" parent="." instance=ExtResource("15_37wyg")]
+[node name="NextLevel" parent="." instance=ExtResource("14_te55t")]
 position = Vector2(592, 69)
