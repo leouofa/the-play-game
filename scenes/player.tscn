@@ -563,6 +563,7 @@ libraries = {
 
 [node name="ShotNoise" type="AudioStreamPlayer" parent="ShotPlayer"]
 stream = ExtResource("5_c8p47")
+volume_db = -8.0
 pitch_scale = 0.6
 bus = &"SFX"
 
