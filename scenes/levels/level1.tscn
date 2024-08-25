@@ -304,6 +304,7 @@ tile_set = SubResource("TileSet_4oylx")
 [node name="Front" type="TileMapLayer" parent="TileMaps"]
 z_index = 6
 use_parent_material = true
+tile_map_data = PackedByteArray("AAAuAAMAAAABAAQAAAD//wMAAAADAAgAAAD//wQAAAADAAcAAAD//wEAAAACAAQAAAA=")
 tile_set = SubResource("TileSet_4oylx")
 
 [node name="PauseLayer" type="CanvasLayer" parent="."]
