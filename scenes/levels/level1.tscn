@@ -1,5 +1,6 @@
-[gd_scene load_steps=25 format=4 uid="uid://wyps26l1s4iw"]
+[gd_scene load_steps=26 format=4 uid="uid://wyps26l1s4iw"]
 
+[ext_resource type="Theme" uid="uid://byr76kqnb40al" path="res://themes/main_menu.tres" id="1_ikrdr"]
 [ext_resource type="PackedScene" uid="uid://bev6by4am3u23" path="res://scenes/game_manager.tscn" id="1_murgc"]
 [ext_resource type="Texture2D" uid="uid://b444hrclvhfdy" path="res://assets/images/parallax/dusk/sky.png" id="3_3uft1"]
 [ext_resource type="Texture2D" uid="uid://c605lteint8st" path="res://assets/sprites/world_tileset.png" id="3_or350"]
@@ -292,6 +293,63 @@ sources/0 = SubResource("TileSetAtlasSource_tqh17")
 
 [node name="Game" type="Node2D"]
 position = Vector2(49, -120)
+
+[node name="Labels" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("1_ikrdr")
+
+[node name="Label" type="Label" parent="Labels"]
+offset_left = -7.0
+offset_top = -9.0
+offset_right = 133.0
+offset_bottom = 27.0
+theme_override_font_sizes/font_size = 8
+text = "Press \"Space\" 
+To Jump
+"
+
+[node name="Label2" type="Label" parent="Labels"]
+offset_left = 202.0
+offset_top = 12.0
+offset_right = 342.0
+offset_bottom = 48.0
+theme_override_font_sizes/font_size = 8
+text = "Press \"Space\" 2X
+To Double Jump
+"
+
+[node name="Label3" type="Label" parent="Labels"]
+offset_left = 454.0
+offset_top = 10.0
+offset_right = 594.0
+offset_bottom = 46.0
+theme_override_font_sizes/font_size = 8
+text = "Press \"O\"
+To Shoot
+"
+
+[node name="Label4" type="Label" parent="Labels"]
+offset_left = 946.0
+offset_top = 10.0
+offset_right = 1086.0
+offset_bottom = 46.0
+theme_override_font_sizes/font_size = 8
+text = "Hold \"Shift\"
+To Dash
+"
+
+[node name="Label5" type="Label" parent="Labels"]
+offset_left = 1065.0
+offset_top = 1.0
+offset_right = 1205.0
+offset_bottom = 37.0
+theme_override_font_sizes/font_size = 8
+text = "Hold \"P\"
+To Slow Time
+"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_t50w3")
