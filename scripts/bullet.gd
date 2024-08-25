@@ -31,6 +31,14 @@ func remove_bullet():
 	queue_free()
 
 func _on_area_entered(_area):
+	create_explosion()
+
+
+func _on_body_shape_entered(_body_rid: RID, _body: Node2D, _body_shape_index: int, _local_shape_index: int) -> void:
+	remove_bullet()
+	create_explosion()
+
+func create_explosion():
 	var hit_instance = hit.instantiate()
 	get_parent().add_child(hit_instance)
 	hit_instance.global_position = marker_2d.global_position
