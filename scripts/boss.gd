@@ -1,4 +1,4 @@
-extends "res://scripts/bad_guy.gd"
+extends BadGuy
 
 func _on_hitbox_area_entered(area):
 	if area.has_method("bullet_deal_damage"):
@@ -12,3 +12,6 @@ func _on_flash_timer_timeout():
 
 func _on_killzone_body_entered(body):
 	Autoload.take_damage(body, PLAYER_DAMAGE)
+
+func post_death():
+	print("new initial_post_death")

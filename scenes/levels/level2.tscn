@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://diiomh72jf8jm" path="res://assets/images/parallax/dusk/trees.png" id="10_rb6lu"]
 [ext_resource type="PackedScene" uid="uid://y7u5evu33077" path="res://scenes/player.tscn" id="11_yv0yi"]
 [ext_resource type="PackedScene" uid="uid://jb7xpxibx6hp" path="res://scenes/killzone.tscn" id="12_2fqr4"]
-[ext_resource type="PackedScene" uid="uid://cxun1bjt5g7w" path="res://scenes/agent.tscn" id="14_ltt3n"]
+[ext_resource type="PackedScene" uid="uid://c432kreb3ai8h" path="res://scenes/boss.tscn" id="12_8j76k"]
 [ext_resource type="PackedScene" uid="uid://c6gqsq7bpg3hp" path="res://scenes/next_level.tscn" id="15_37wyg"]
 
 [sub_resource type="Gradient" id="Gradient_tpp8t"]
@@ -437,8 +437,8 @@ shape = SubResource("WorldBoundaryShape2D_ftjdq")
 
 [node name="Enemies" type="Node" parent="."]
 
-[node name="Agent" parent="Enemies" instance=ExtResource("14_ltt3n")]
-position = Vector2(601, -31)
+[node name="Boss" parent="Enemies" instance=ExtResource("12_8j76k")]
+position = Vector2(531, -31)
 
 [node name="NextLevel" parent="." instance=ExtResource("15_37wyg")]
 position = Vector2(592, 69)

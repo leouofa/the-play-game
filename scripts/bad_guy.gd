@@ -1,3 +1,5 @@
+class_name BadGuy
+
 extends Node2D
 
 @export var PLAYER_DAMAGE = 25
@@ -52,3 +54,7 @@ func death():
 	animated_sprite.play("death")
 	killzone.queue_free()
 	hitbox.queue_free()
+	post_death()
+
+func post_death():
+	print("initial_post_death")
