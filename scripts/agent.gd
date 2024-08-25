@@ -1,4 +1,4 @@
-extends "res://scripts/bad_guy.gd"
+extends BadGuy
 
 func _on_hitbox_area_entered(area):
 	if area.has_method("bullet_deal_damage"):
