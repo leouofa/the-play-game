@@ -31,6 +31,11 @@ window/stretch/mode="viewport"
 window/image="res://images/splash.png"
 window/show_image=true
 
+[editor]
+
+movie_writer/movie_file="/Users/leonid/src/play/movies/movie.avi"
+movie_writer/fps=30
+
 [input]
 
 jump={
