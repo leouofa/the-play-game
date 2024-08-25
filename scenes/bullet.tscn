@@ -139,4 +139,5 @@ process_material = SubResource("ParticleProcessMaterial_oxo48")
 [node name="Marker2D" type="Marker2D" parent="."]
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]
