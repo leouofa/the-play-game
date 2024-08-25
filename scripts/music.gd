@@ -25,4 +25,5 @@ func _on_main_menu():
 func play_file(file):
 	new_stream = load(MUSIC_PATH + str(file) +".mp3")
 	player.stream = new_stream
+	player.stream.loop = true
 	player.play()
