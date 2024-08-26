@@ -109,7 +109,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2p368"]
-size = Vector2(14, 30)
+size = Vector2(14, 34)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lnql0"]
 size = Vector2(5, 15)
@@ -136,7 +136,7 @@ target_position = Vector2(-12, 0)
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
-position = Vector2(0, -15)
+position = Vector2(0, -17)
 shape = SubResource("RectangleShape2D_2p368")
 
 [node name="FlashTimer" type="Timer" parent="."]
@@ -151,7 +151,7 @@ scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_lnql0")
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(0, -9)
+position = Vector2(0, -16)
 
 [connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="timeout" from="FlashTimer" to="." method="_on_flash_timer_timeout"]

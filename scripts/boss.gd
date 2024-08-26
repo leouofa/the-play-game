@@ -16,6 +16,7 @@ func _on_killzone_body_entered(body):
 	Autoload.take_damage(body, PLAYER_DAMAGE)
 
 func post_death():
+	await animated_sprite.animation_finished
 	var next_level_instance = next_level.instantiate()
 	next_level_instance.skip_animation = true
 	get_parent().add_child(next_level_instance)
