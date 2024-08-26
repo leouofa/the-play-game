@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://vm4ych1opvcy"]
+[gd_scene load_steps=23 format=4 uid="uid://vm4ych1opvcy"]
 
 [ext_resource type="PackedScene" uid="uid://bev6by4am3u23" path="res://scenes/game_manager.tscn" id="2_b026e"]
 [ext_resource type="Texture2D" uid="uid://c605lteint8st" path="res://assets/sprites/world_tileset.png" id="3_2uxdo"]
@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://y7u5evu33077" path="res://scenes/player.tscn" id="11_yv0yi"]
 [ext_resource type="PackedScene" uid="uid://jb7xpxibx6hp" path="res://scenes/killzone.tscn" id="12_2fqr4"]
 [ext_resource type="PackedScene" uid="uid://c432kreb3ai8h" path="res://scenes/boss.tscn" id="12_8j76k"]
-[ext_resource type="PackedScene" uid="uid://c6gqsq7bpg3hp" path="res://scenes/next_level.tscn" id="15_37wyg"]
 
 [sub_resource type="Gradient" id="Gradient_tpp8t"]
 
@@ -439,6 +438,4 @@ shape = SubResource("WorldBoundaryShape2D_ftjdq")
 
 [node name="Boss" parent="Enemies" instance=ExtResource("12_8j76k")]
 position = Vector2(531, -31)
-
-[node name="NextLevel" parent="." instance=ExtResource("15_37wyg")]
-position = Vector2(592, 69)
+scale = Vector2(2, 2)
