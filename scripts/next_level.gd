@@ -7,11 +7,14 @@ var game_data = {}
 @onready var canvas_layer = $CanvasLayer
 @onready var animation_player = $AnimationPlayer
 
+var skip_animation = false
+
 
 func _ready():
-	canvas_layer.show()
-	animation_player.play("transition_out")
-	await animation_player.animation_finished
+	if skip_animation == false:
+		canvas_layer.show()
+		animation_player.play("transition_out")
+		await animation_player.animation_finished
 
 
 func _on_body_entered(_body):

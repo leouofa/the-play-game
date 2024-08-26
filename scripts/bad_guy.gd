@@ -20,6 +20,8 @@ var direction = 1
 @onready var hitbox = $hitbox
 @onready var flash_timer = $FlashTimer
 
+var next_level = preload("res://scenes/next_level.tscn")
+
 func _ready():
 	animated_sprite.material.set_shader_parameter("flash_color", default_flash_color)
 	animated_sprite.material.set_shader_parameter("flash_modifier", default_flash_modifier)
