@@ -418,5 +418,56 @@ position = Vector2(107, -46)
 [node name="Agent" parent="Enemies" instance=ExtResource("13_iimr6")]
 position = Vector2(1012, -63)
 
+[node name="Agent5" parent="Enemies" instance=ExtResource("13_iimr6")]
+position = Vector2(864, -63)
+
+[node name="Agent6" parent="Enemies" instance=ExtResource("13_iimr6")]
+position = Vector2(1311, -63)
+
+[node name="Agent7" parent="Enemies" instance=ExtResource("13_iimr6")]
+position = Vector2(1433, -63)
+
+[node name="Agent8" parent="Enemies" instance=ExtResource("13_iimr6")]
+position = Vector2(1195, -238)
+
+[node name="Agent9" parent="Enemies" instance=ExtResource("13_iimr6")]
+position = Vector2(1148, -238)
+
+[node name="Agent10" parent="Enemies" instance=ExtResource("13_iimr6")]
+position = Vector2(1026, -271)
+
+[node name="Agent11" parent="Enemies" instance=ExtResource("13_iimr6")]
+position = Vector2(928, -271)
+
+[node name="Agent12" parent="Enemies" instance=ExtResource("13_iimr6")]
+position = Vector2(708, -271)
+
+[node name="Agent13" parent="Enemies" instance=ExtResource("13_iimr6")]
+position = Vector2(783, -271)
+
+[node name="Agent14" parent="Enemies" instance=ExtResource("13_iimr6")]
+position = Vector2(485, -431)
+
+[node name="Agent15" parent="Enemies" instance=ExtResource("13_iimr6")]
+position = Vector2(342, -431)
+
+[node name="Agent16" parent="Enemies" instance=ExtResource("13_iimr6")]
+position = Vector2(162, -431)
+
+[node name="Agent17" parent="Enemies" instance=ExtResource("13_iimr6")]
+position = Vector2(275, -431)
+
+[node name="Agent18" parent="Enemies" instance=ExtResource("13_iimr6")]
+position = Vector2(108, -431)
+
+[node name="Agent2" parent="Enemies" instance=ExtResource("13_iimr6")]
+position = Vector2(421, -31)
+
+[node name="Agent3" parent="Enemies" instance=ExtResource("13_iimr6")]
+position = Vector2(502, -31)
+
+[node name="Agent4" parent="Enemies" instance=ExtResource("13_iimr6")]
+position = Vector2(288, -31)
+
 [node name="NextLevel" parent="." instance=ExtResource("14_l3eck")]
 position = Vector2(-16, -392)
