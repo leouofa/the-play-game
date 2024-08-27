@@ -417,12 +417,19 @@ position = Vector2(107, -46)
 
 [node name="Agent" parent="Enemies" instance=ExtResource("13_iimr6")]
 position = Vector2(1012, -63)
+SPEED = 80
+HEALTH = 400
+default_flash_color = Color(0.760936, 0.343935, 0.840095, 1)
 
 [node name="Agent5" parent="Enemies" instance=ExtResource("13_iimr6")]
 position = Vector2(864, -63)
 
 [node name="Agent6" parent="Enemies" instance=ExtResource("13_iimr6")]
 position = Vector2(1311, -63)
+SPEED = 80
+HEALTH = 400
+default_flash_color = Color(0.760936, 0.343935, 0.840095, 1)
+default_flash_modifier = 0.3
 
 [node name="Agent7" parent="Enemies" instance=ExtResource("13_iimr6")]
 position = Vector2(1433, -63)
@@ -432,15 +439,27 @@ position = Vector2(1195, -238)
 
 [node name="Agent9" parent="Enemies" instance=ExtResource("13_iimr6")]
 position = Vector2(1148, -238)
+SPEED = 80
+HEALTH = 400
+default_flash_color = Color(0.760936, 0.343935, 0.840095, 1)
+default_flash_modifier = 0.3
 
 [node name="Agent10" parent="Enemies" instance=ExtResource("13_iimr6")]
 position = Vector2(1026, -271)
+SPEED = 80
+HEALTH = 400
+default_flash_color = Color(0.760936, 0.343935, 0.840095, 1)
+default_flash_modifier = 0.3
 
 [node name="Agent11" parent="Enemies" instance=ExtResource("13_iimr6")]
 position = Vector2(928, -271)
 
 [node name="Agent12" parent="Enemies" instance=ExtResource("13_iimr6")]
 position = Vector2(708, -271)
+SPEED = 80
+HEALTH = 400
+default_flash_color = Color(0.760936, 0.343935, 0.840095, 1)
+default_flash_modifier = 0.3
 
 [node name="Agent13" parent="Enemies" instance=ExtResource("13_iimr6")]
 position = Vector2(783, -271)
@@ -450,6 +469,10 @@ position = Vector2(485, -431)
 
 [node name="Agent15" parent="Enemies" instance=ExtResource("13_iimr6")]
 position = Vector2(342, -431)
+SPEED = 80
+HEALTH = 400
+default_flash_color = Color(0.760936, 0.343935, 0.840095, 1)
+default_flash_modifier = 0.3
 
 [node name="Agent16" parent="Enemies" instance=ExtResource("13_iimr6")]
 position = Vector2(162, -431)
@@ -459,12 +482,20 @@ position = Vector2(275, -431)
 
 [node name="Agent18" parent="Enemies" instance=ExtResource("13_iimr6")]
 position = Vector2(108, -431)
+SPEED = 80
+HEALTH = 400
+default_flash_color = Color(0.760936, 0.343935, 0.840095, 1)
+default_flash_modifier = 0.3
 
 [node name="Agent2" parent="Enemies" instance=ExtResource("13_iimr6")]
 position = Vector2(421, -31)
 
 [node name="Agent3" parent="Enemies" instance=ExtResource("13_iimr6")]
 position = Vector2(502, -31)
+SPEED = 80
+HEALTH = 400
+default_flash_color = Color(0.760936, 0.343935, 0.840095, 1)
+default_flash_modifier = 0.3
 
 [node name="Agent4" parent="Enemies" instance=ExtResource("13_iimr6")]
 position = Vector2(288, -31)
