@@ -16,6 +16,7 @@ func _input(event):
 		end_intro()
 
 func end_intro():
+	Music.play_main_menu()
 	get_tree().change_scene_to_file("res://scenes/ui/main_menu.tscn")
 
 func load_data():
