@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="play"
-config/description="Splash Platformer"
+config/description="Side-Scroller Platformer"
 run/main_scene="res://scenes/ui/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 boot_splash/bg_color=Color(0, 0, 0, 1)
@@ -27,6 +27,7 @@ Autoload="*res://scenes/autoload.tscn"
 
 [display]
 
+window/size/mode=2
 window/stretch/mode="viewport"
 window/image="res://images/splash.png"
 window/show_image=true
@@ -86,5 +87,5 @@ esc={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-anti_aliasing/quality/msaa_2d=3
+textures/vram_compression/import_etc2_astc=true
 viewport/hdr_2d=true
