@@ -51,8 +51,6 @@ func save(save_slot):
 	file.store_var(game_data)
 	file.close()
 
-	print(game_data)
-
 func calculate_score():
 	var score = float(Autoload.score) / Autoload.time * 100
 	return score
