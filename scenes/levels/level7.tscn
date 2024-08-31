@@ -415,7 +415,7 @@ shape = SubResource("WorldBoundaryShape2D_ftjdq")
 position = Vector2(637, -29)
 scale = Vector2(1.5, 1.5)
 PLAYER_DAMAGE = 45
-SPEED = 100
+SPEED = 150
 HEALTH = 5000
 
 [node name="NextLevel" parent="." instance=ExtResource("14_7msiy")]
