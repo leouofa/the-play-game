@@ -14,7 +14,3 @@ autoplay = true
 max_distance = 10000.0
 attenuation = 1e-05
 bus = &"Music"
-
-[connection signal="change_level" from="." to="." method="_on_change_level"]
-[connection signal="intro" from="." to="." method="_on_intro"]
-[connection signal="main_menu" from="." to="." method="_on_main_menu"]
