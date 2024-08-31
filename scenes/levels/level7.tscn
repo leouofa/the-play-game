@@ -414,6 +414,9 @@ shape = SubResource("WorldBoundaryShape2D_ftjdq")
 [node name="Boss" parent="Enemies" instance=ExtResource("11_4o4wn")]
 position = Vector2(637, -29)
 scale = Vector2(1.5, 1.5)
+PLAYER_DAMAGE = 45
+SPEED = 100
+HEALTH = 5000
 
 [node name="NextLevel" parent="." instance=ExtResource("14_7msiy")]
 position = Vector2(835, -204)
@@ -421,4 +424,4 @@ position = Vector2(835, -204)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(433, -26)
 sprite_frames = SubResource("SpriteFrames_0wpj5")
-frame_progress = 0.070084
+frame_progress = 0.769898

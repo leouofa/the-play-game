@@ -136,6 +136,7 @@ material = SubResource("ShaderMaterial_a8rdp")
 position = Vector2(3.5, -32.5)
 scale = Vector2(0.492188, 0.492188)
 sprite_frames = SubResource("SpriteFrames_dfvd7")
+animation = &"death"
 autoplay = "default"
 
 [node name="RayCastRight" type="RayCast2D" parent="."]
@@ -165,7 +166,6 @@ scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_lnql0")
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(0, -16)
 
 [connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="timeout" from="FlashTimer" to="." method="_on_flash_timer_timeout"]
