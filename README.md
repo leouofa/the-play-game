@@ -1,4 +1,4 @@
-# The Play (WIP)
+# The Play
 Godot 4 Powered Side Scroller Adventure Game for Mac and PC
 
 ## Project Goals:
