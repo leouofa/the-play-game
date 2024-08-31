@@ -15,7 +15,6 @@ func play_intro():
 	play_file("intro")
 
 func play_ending():
-	print("ending time")
 	play_file("ending")
 
 func play_main_menu():

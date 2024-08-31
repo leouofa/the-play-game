@@ -59,4 +59,4 @@ func death():
 	post_death()
 
 func post_death():
-	print("initial_post_death")
+	pass
