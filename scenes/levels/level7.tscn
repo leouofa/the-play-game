@@ -9,8 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://dsbqg24ck65jn" path="res://assets/images/parallax/space/parallax-space-stars.png" id="6_yxawm"]
 [ext_resource type="PackedScene" uid="uid://y7u5evu33077" path="res://scenes/player.tscn" id="10_y8jac"]
 [ext_resource type="PackedScene" uid="uid://jb7xpxibx6hp" path="res://scenes/killzone.tscn" id="11_2u7ub"]
+[ext_resource type="PackedScene" uid="uid://dvsi8smun0stv" path="res://scenes/megaman.tscn" id="11_4o4wn"]
 [ext_resource type="PackedScene" uid="uid://g7cqyt56f0sk" path="res://scenes/coin.tscn" id="12_1s402"]
-[ext_resource type="PackedScene" uid="uid://cxun1bjt5g7w" path="res://scenes/agent.tscn" id="13_vmjiw"]
 [ext_resource type="PackedScene" uid="uid://c6gqsq7bpg3hp" path="res://scenes/next_level.tscn" id="14_7msiy"]
 
 [sub_resource type="Gradient" id="Gradient_tpp8t"]
@@ -390,8 +390,9 @@ position = Vector2(107, -46)
 
 [node name="Enemies" type="Node" parent="."]
 
-[node name="Agent" parent="Enemies" instance=ExtResource("13_vmjiw")]
-position = Vector2(601, -31)
+[node name="Boss" parent="Enemies" instance=ExtResource("11_4o4wn")]
+position = Vector2(637, -29)
+scale = Vector2(2, 2)
 
 [node name="NextLevel" parent="." instance=ExtResource("14_7msiy")]
-position = Vector2(592, 69)
+position = Vector2(835, -204)
