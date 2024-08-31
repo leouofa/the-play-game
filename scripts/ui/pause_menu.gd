@@ -37,5 +37,5 @@ func _on_resume_button_pressed():
 
 func _on_quit_button_pressed():
 	resume()
-	Music.emit_signal("main_menu")
+	Music.play_main_menu()
 	get_tree().change_scene_to_file('res://scenes/ui/main_menu.tscn')

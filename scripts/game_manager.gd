@@ -21,7 +21,7 @@ func _ready():
 	health_label.text = "Health: " + str(Autoload.health)
 	dash_label.text = "Dash: " + str(Autoload.dash)
 	slow_label.text = "Slow: " + str(Autoload.slow)
-	Music.emit_signal("change_level", Autoload.level)
+	Music.change_level(Autoload.level)
 
 func _process(_delta):
 	health_label.text = "Health: " + str(Autoload.health)

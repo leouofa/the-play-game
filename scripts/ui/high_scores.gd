@@ -41,7 +41,7 @@ func get_sorted_usernames_by_score(data):
 		var total_score = 0
 		for score in user["scores"].values():
 			total_score += score
-		totals[user["username"]] = total_score
+		totals[user["username"]] = ceil(total_score)
 	
 	# Convert dictionary to array of tuples and sort
 	var sorted_totals = []
