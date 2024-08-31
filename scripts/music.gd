@@ -6,9 +6,7 @@ const MUSIC_PATH = "res://assets/music/"
 var new_stream: AudioStream
 var last_level: int = -1  # Initialize to a value that cannot be a valid level
 
-signal change_level(level)
-
-func _on_change_level(level):
+func change_level(level):
 	if level != last_level:
 		play_file("level" + str(level))
 		last_level = level
