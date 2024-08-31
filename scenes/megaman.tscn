@@ -1,0 +1,172 @@
+[gd_scene load_steps=23 format=3 uid="uid://dvsi8smun0stv"]
+
+[ext_resource type="Script" path="res://scripts/boss.gd" id="1_qhdo1"]
+[ext_resource type="Shader" path="res://shaders/flash.gdshader" id="2_gx7hr"]
+[ext_resource type="Texture2D" uid="uid://d3vibyn5m2i7h" path="res://assets/sprites/wizard/Dead.png" id="3_tgw3c"]
+[ext_resource type="Texture2D" uid="uid://fr6jr2xymt4w" path="res://assets/sprites/wizard/Run.png" id="4_sm2cn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a8rdp"]
+resource_local_to_scene = true
+shader = ExtResource("2_gx7hr")
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/flash_modifier = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s46tp"]
+atlas = ExtResource("3_tgw3c")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ifnw"]
+atlas = ExtResource("3_tgw3c")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fmbml"]
+atlas = ExtResource("3_tgw3c")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fpxdw"]
+atlas = ExtResource("3_tgw3c")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q4xec"]
+atlas = ExtResource("3_tgw3c")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g1df0"]
+atlas = ExtResource("3_tgw3c")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6c12u"]
+atlas = ExtResource("4_sm2cn")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qu5vf"]
+atlas = ExtResource("4_sm2cn")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ms5jj"]
+atlas = ExtResource("4_sm2cn")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_omsra"]
+atlas = ExtResource("4_sm2cn")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mbyvd"]
+atlas = ExtResource("4_sm2cn")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uxs3l"]
+atlas = ExtResource("4_sm2cn")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vp10i"]
+atlas = ExtResource("4_sm2cn")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qq3m1"]
+atlas = ExtResource("4_sm2cn")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dfvd7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s46tp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ifnw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fmbml")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fpxdw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q4xec")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g1df0")
+}],
+"loop": false,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6c12u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qu5vf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ms5jj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_omsra")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mbyvd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uxs3l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vp10i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qq3m1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2p368"]
+size = Vector2(14, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lnql0"]
+size = Vector2(5, 15)
+
+[node name="Boss" type="Node2D"]
+script = ExtResource("1_qhdo1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_a8rdp")
+position = Vector2(3.5, -32.5)
+scale = Vector2(0.492188, 0.492188)
+sprite_frames = SubResource("SpriteFrames_dfvd7")
+autoplay = "default"
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+position = Vector2(0, -7)
+target_position = Vector2(12, 0)
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+position = Vector2(0, -7)
+target_position = Vector2(-12, 0)
+
+[node name="hitbox" type="Area2D" parent="."]
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(0, -15)
+shape = SubResource("RectangleShape2D_2p368")
+
+[node name="FlashTimer" type="Timer" parent="."]
+wait_time = 0.065
+
+[node name="Killzone" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(0, -15)
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_lnql0")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(0, -16)
+
+[connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="timeout" from="FlashTimer" to="." method="_on_flash_timer_timeout"]
+[connection signal="body_entered" from="Killzone" to="." method="_on_killzone_body_entered"]
