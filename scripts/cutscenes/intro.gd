@@ -1,7 +1,7 @@
 extends Node2D
 
 func _ready():
-	Music.emit_signal("intro")
+	Music.play_intro()
 
 func _input(event):
 	if event.is_action_pressed("ui_accept"):
