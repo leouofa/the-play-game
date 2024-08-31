@@ -1,5 +1,5 @@
 # The Play
-Godot 4 Powered Side Scroller Adventure Game for Mac and PC
+Godot 4 Powered Side Scroller Adventure Game for Mac
 
 ## Project Goals:
 - Produce a fun and playable side-scroller game
