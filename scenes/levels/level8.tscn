@@ -1,0 +1,281 @@
+[gd_scene load_steps=32 format=3 uid="uid://chpqpxg4432j3"]
+
+[ext_resource type="Texture2D" uid="uid://daygdp8yh18na" path="res://assets/images/nebulas/Purple Nebula/Purple_Nebula_08-1024x1024.png" id="1_0k5a3"]
+[ext_resource type="Script" path="res://scripts/cutscenes/finish.gd" id="1_tg6nx"]
+[ext_resource type="Texture2D" uid="uid://csf1bvbkgldv1" path="res://assets/sprites/macron/front.png" id="2_s6e4a"]
+[ext_resource type="Texture2D" uid="uid://cxpvdtiivhxpu" path="res://assets/sprites/board.png" id="4_vbxum"]
+[ext_resource type="Texture2D" uid="uid://c7qg2v0mwnv6n" path="res://assets/sprites/speech_bubble.png" id="7_nsi4d"]
+[ext_resource type="FontFile" uid="uid://convhgiltgnsw" path="res://assets/fonts/PixelOperator8.ttf" id="8_vsd8d"]
+[ext_resource type="Texture2D" uid="uid://yfj3lfwe4570" path="res://assets/sprites/osiris.png" id="9_i3yig"]
+[ext_resource type="Theme" uid="uid://byr76kqnb40al" path="res://themes/main_menu.tres" id="10_2sjdh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rsnnh"]
+atlas = ExtResource("4_vbxum")
+region = Rect2(16, 208, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tb1j0"]
+atlas = ExtResource("4_vbxum")
+region = Rect2(16, 224, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_men37"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rsnnh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tb1j0")
+}],
+"loop": true,
+"name": &"skate",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3kqg"]
+atlas = ExtResource("2_s6e4a")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8325"]
+atlas = ExtResource("2_s6e4a")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ls8si"]
+atlas = ExtResource("2_s6e4a")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0d2lm"]
+atlas = ExtResource("2_s6e4a")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aigt4"]
+atlas = ExtResource("2_s6e4a")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qe34r"]
+atlas = ExtResource("2_s6e4a")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4l2g1"]
+atlas = ExtResource("2_s6e4a")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fldbb"]
+atlas = ExtResource("2_s6e4a")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dy3aq"]
+atlas = ExtResource("2_s6e4a")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kjbu7"]
+atlas = ExtResource("2_s6e4a")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8jj7p"]
+atlas = ExtResource("2_s6e4a")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1027x"]
+atlas = ExtResource("2_s6e4a")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8lltx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i3kqg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a8325")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ls8si")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0d2lm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aigt4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qe34r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4l2g1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fldbb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dy3aq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kjbu7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8jj7p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1027x")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_8epgh"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_b2kjo"]
+resource_name = "intro"
+length = 60.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 2.08165e-12, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 50)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -50, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 50)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hdmjd"]
+_data = {
+"RESET": SubResource("Animation_8epgh"),
+"intro": SubResource("Animation_b2kjo")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ld1y"]
+atlas = ExtResource("9_i3yig")
+region = Rect2(0, 13, 64, 51)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p1dae"]
+atlas = ExtResource("9_i3yig")
+region = Rect2(64, 13, 64, 51)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_63eqp"]
+atlas = ExtResource("9_i3yig")
+region = Rect2(128, 13, 64, 51)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_662ig"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ld1y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p1dae")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_63eqp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Finish" type="Node2D"]
+script = ExtResource("1_tg6nx")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.641934, 0.641934, 0.641934, 1)
+offset_right = 1152.0
+offset_bottom = 1152.0
+texture = ExtResource("1_0k5a3")
+
+[node name="Board" type="AnimatedSprite2D" parent="."]
+position = Vector2(463.25, 618)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_men37")
+animation = &"skate"
+
+[node name="Macron1" type="AnimatedSprite2D" parent="."]
+texture_filter = 5
+position = Vector2(465.25, 488)
+scale = Vector2(8.51562, 8.51562)
+sprite_frames = SubResource("SpriteFrames_8lltx")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_hdmjd")
+}
+autoplay = "intro"
+
+[node name="Space to Skip" type="Label" parent="."]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 220.0
+offset_bottom = 66.0
+theme = ExtResource("10_2sjdh")
+text = "Press \"space\" to exit"
+
+[node name="Osiris" type="AnimatedSprite2D" parent="."]
+modulate = Color(0.346213, 0.346213, 0.346213, 1)
+position = Vector2(713, 605)
+scale = Vector2(1.70721, 1.70721)
+sprite_frames = SubResource("SpriteFrames_662ig")
+autoplay = "default"
+frame_progress = 0.902132
+
+[node name="SpeechBubble" type="Sprite2D" parent="Osiris"]
+modulate = Color(0.21, 0.21, 0.21, 1)
+position = Vector2(60.3325, -72.6331)
+scale = Vector2(0.16401, 0.16401)
+texture = ExtResource("7_nsi4d")
+
+[node name="Enjoy" type="Label" parent="."]
+offset_left = 724.0
+offset_top = 430.0
+offset_right = 936.0
+offset_bottom = 532.0
+theme_override_fonts/font = ExtResource("8_vsd8d")
+theme_override_font_sizes/font_size = 24
+text = "Enjoy The 
+Board!"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_top = 120.0
+offset_right = 1149.0
+offset_bottom = 184.0
+
+[node name="High Score" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_fonts/font = ExtResource("8_vsd8d")
+theme_override_font_sizes/font_size = 64
+text = "Score: "
