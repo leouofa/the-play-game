@@ -7,7 +7,7 @@ var save_slot = Autoload.slot
 
 
 func _ready():
-	Music.emit_signal("intro")
+	Music.play_ending()
 	load_data()
 	high_score.set_text("Score: " + str(calculate_total_score()))
 

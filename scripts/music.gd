@@ -19,6 +19,10 @@ func _on_change_level(level):
 func _on_intro():
 	play_file("intro")
 
+func play_ending():
+	print("ending time")
+	play_file("ending")
+
 func _on_main_menu():
 	play_file("time_for_adventure")
 	
